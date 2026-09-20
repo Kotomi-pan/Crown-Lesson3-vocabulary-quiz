@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Lesson 3 Vocabulary Quiz</title>
 
 <style>
@@ -12,16 +13,17 @@
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans JP", sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+               "Noto Sans JP", sans-serif;
   background: #f3f6fb;
   color: #1f2937;
 }
 
 header {
-  background: linear-gradient(135deg, #2563eb, #4f46e5);
-  color: white;
   padding: 24px 15px;
+  color: white;
   text-align: center;
+  background: linear-gradient(135deg,#2563eb,#4f46e5);
 }
 
 header h1 {
@@ -41,10 +43,10 @@ header p {
 }
 
 .card {
-  background: white;
-  border-radius: 16px;
   padding: 22px;
   margin-bottom: 18px;
+  background: white;
+  border-radius: 16px;
   box-shadow: 0 5px 20px rgba(0,0,0,.07);
 }
 
@@ -62,19 +64,19 @@ h3 {
 }
 
 .firebase-status {
-  text-align: center;
+  margin-bottom: 12px;
   color: #64748b;
   font-size: 13px;
-  margin-bottom: 12px;
+  text-align: center;
 }
 
 .notice {
+  margin: 12px 0;
+  padding: 12px;
+  line-height: 1.65;
   background: #eff6ff;
   border-left: 4px solid #3b82f6;
-  padding: 12px;
   border-radius: 8px;
-  margin: 12px 0;
-  line-height: 1.6;
 }
 
 .challenge-notice {
@@ -82,26 +84,36 @@ h3 {
   border-left-color: #f97316;
 }
 
+.mission-notice {
+  background: #fdf4ff;
+  border: 2px solid #e879f9;
+  border-left: 6px solid #c026d3;
+}
+
+.mission-notice strong {
+  color: #86198f;
+}
+
 .small {
-  font-size: 13px;
   color: #64748b;
+  font-size: 13px;
   line-height: 1.6;
 }
 
 label {
   display: block;
-  font-weight: 700;
   margin: 15px 0 7px;
+  font-weight: 700;
 }
 
 input[type="text"],
 select {
   width: 100%;
   padding: 12px;
-  border: 1px solid #cbd5e1;
-  border-radius: 9px;
   font-size: 16px;
   background: white;
+  border: 1px solid #cbd5e1;
+  border-radius: 9px;
 }
 
 input[type="text"]:focus,
@@ -111,12 +123,12 @@ select:focus {
 }
 
 button {
-  border: none;
-  border-radius: 11px;
   padding: 13px 18px;
   font-size: 16px;
   font-weight: 800;
   cursor: pointer;
+  border: none;
+  border-radius: 11px;
 }
 
 button:disabled {
@@ -127,29 +139,29 @@ button:disabled {
 .primary {
   width: 100%;
   margin-top: 15px;
-  background: #2563eb;
   color: white;
+  background: #2563eb;
 }
 
 .secondary {
   width: 100%;
   margin-top: 10px;
-  background: #e2e8f0;
   color: #1e293b;
+  background: #e2e8f0;
 }
 
 .challenge-button {
   width: 100%;
   margin-top: 12px;
   color: white;
-  background: linear-gradient(135deg, #f97316, #ef4444);
+  background: linear-gradient(135deg,#f97316,#ef4444);
 }
 
 .success-button {
   width: 100%;
   margin-top: 12px;
-  background: #059669;
   color: white;
+  background: #059669;
 }
 
 .home-grid {
@@ -160,21 +172,21 @@ button:disabled {
 }
 
 .home-option {
-  border: 2px solid #e2e8f0;
-  border-radius: 15px;
   padding: 20px 15px;
   text-align: center;
+  border: 2px solid #e2e8f0;
+  border-radius: 15px;
 }
 
 .home-icon {
   font-size: 38px;
 }
 
-/* Section選択 */
+/* Section */
 
 .sections {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2,1fr);
   gap: 9px;
 }
 
@@ -182,26 +194,21 @@ button:disabled {
   display: flex;
   align-items: center;
   gap: 10px;
-  margin: 0;
   min-height: 52px;
+  margin: 0;
   padding: 12px;
+  cursor: pointer;
+  user-select: none;
   background: #f8fafc;
   border: 2px solid #e2e8f0;
   border-radius: 10px;
-  cursor: pointer;
-  user-select: none;
-  transition: .15s;
-}
-
-.section-option:hover {
-  background: #f1f5f9;
 }
 
 .section-option input {
+  flex: 0 0 auto;
   width: 21px;
   height: 21px;
   margin: 0;
-  flex: 0 0 auto;
   accent-color: #2563eb;
 }
 
@@ -210,10 +217,12 @@ button:disabled {
 }
 
 .section-option:has(input:checked) {
+  color: #1d4ed8;
   background: #eff6ff;
   border-color: #60a5fa;
-  color: #1d4ed8;
 }
+
+/* 通常問題 */
 
 .quiz-card {
   text-align: center;
@@ -221,27 +230,27 @@ button:disabled {
 
 .progress {
   height: 10px;
+  margin: 12px 0 20px;
+  overflow: hidden;
   background: #e5e7eb;
   border-radius: 99px;
-  overflow: hidden;
-  margin: 12px 0 20px;
 }
 
 .progress-bar {
+  width: 0;
   height: 100%;
   background: #3b82f6;
-  width: 0;
 }
 
 .badge {
   display: inline-block;
   padding: 5px 9px;
   margin: 2px;
-  border-radius: 99px;
-  background: #dbeafe;
   color: #1e40af;
   font-size: 12px;
   font-weight: 700;
+  background: #dbeafe;
+  border-radius: 99px;
 }
 
 .question {
@@ -264,12 +273,12 @@ button:disabled {
 
 .choice {
   width: 100%;
+  padding: 14px;
+  color: #1f2937;
+  text-align: left;
   background: white;
   border: 2px solid #e2e8f0;
-  padding: 14px;
   border-radius: 11px;
-  text-align: left;
-  color: #1f2937;
 }
 
 .choice.correct {
@@ -303,21 +312,21 @@ button:disabled {
 }
 
 .score-big {
+  color: #2563eb;
   font-size: 50px;
   font-weight: 900;
-  color: #2563eb;
 }
 
 .statgrid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3,1fr);
   gap: 10px;
   margin: 20px 0;
 }
 
 .stat {
-  background: #f8fafc;
   padding: 14px 5px;
+  background: #f8fafc;
   border-radius: 10px;
 }
 
@@ -338,23 +347,23 @@ button:disabled {
 .review-button {
   width: 100%;
   margin-top: 12px;
-  background: #f97316;
   color: white;
+  background: #f97316;
 }
 
 .error-box {
-  background: #fee2e2;
-  color: #991b1b;
-  padding: 12px;
-  border-radius: 8px;
   margin-top: 12px;
+  padding: 12px;
+  color: #991b1b;
+  background: #fee2e2;
+  border-radius: 8px;
 }
 
-/* 時間選択 */
+/* 時間 */
 
 .time-select-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3,1fr);
   gap: 8px;
 }
 
@@ -370,17 +379,17 @@ button:disabled {
 .time-choice label {
   margin: 0;
   padding: 14px 8px;
-  border: 2px solid #e2e8f0;
-  border-radius: 12px;
   text-align: center;
   cursor: pointer;
   background: white;
+  border: 2px solid #e2e8f0;
+  border-radius: 12px;
 }
 
 .time-choice input:checked + label {
-  border-color: #f97316;
-  background: #fff7ed;
   color: #c2410c;
+  background: #fff7ed;
+  border-color: #f97316;
 }
 
 .time-choice strong {
@@ -399,18 +408,18 @@ button:disabled {
 
 .timer-box,
 .points-box {
-  border-radius: 14px;
   padding: 14px 8px;
+  border-radius: 14px;
 }
 
 .timer-box {
-  background: #fff7ed;
   color: #9a3412;
+  background: #fff7ed;
 }
 
 .points-box {
-  background: #eff6ff;
   color: #1d4ed8;
+  background: #eff6ff;
 }
 
 .timer-label,
@@ -427,21 +436,21 @@ button:disabled {
 }
 
 .timer-danger {
-  background: #fee2e2 !important;
   color: #b91c1c !important;
+  background: #fee2e2 !important;
 }
 
 .challenge-mode-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3,1fr);
   gap: 10px;
   margin: 18px 0;
 }
 
 .mode-card {
+  padding: 15px 8px;
   border: 2px solid #e2e8f0;
   border-radius: 14px;
-  padding: 15px 8px;
 }
 
 .mode-card strong {
@@ -451,8 +460,8 @@ button:disabled {
 
 .mode-card span {
   display: block;
-  font-size: 13px;
   color: #64748b;
+  font-size: 13px;
   line-height: 1.5;
 }
 
@@ -474,68 +483,168 @@ button:disabled {
 }
 
 .one-button {
-  background: #2563eb;
   color: white;
+  background: #2563eb;
 }
 
 .three-button {
-  background: #ea580c;
   color: white;
+  background: #ea580c;
 }
 
 .five-button {
-  background: #7c3aed;
   color: white;
+  background: #7c3aed;
 }
 
 .set-status {
+  margin: 10px 0;
+  padding: 9px;
+  font-weight: 800;
   background: #f8fafc;
   border-radius: 10px;
-  padding: 9px;
-  margin: 10px 0;
-  font-weight: 800;
 }
 
 .challenge-score {
-  font-size: 58px;
   color: #ea580c;
+  font-size: 58px;
   font-weight: 900;
 }
 
 .rank-self {
+  color: #2563eb;
   font-size: 24px;
   font-weight: 900;
-  color: #2563eb;
 }
 
 .selected-range {
+  margin: 12px 0;
+  padding: 10px;
+  color: #065f46;
+  font-weight: 700;
   background: #ecfdf5;
   border: 1px solid #a7f3d0;
-  color: #065f46;
   border-radius: 10px;
-  padding: 10px;
-  margin: 12px 0;
+}
+
+.class-badge {
+  display: inline-block;
+  padding: 7px 13px;
+  margin: 5px 0;
+  color: #fff;
+  font-weight: 900;
+  background: #334155;
+  border-radius: 99px;
+}
+
+/* 並べ替え */
+
+.order-answer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+  min-height: 64px;
+  margin: 16px 0;
+  padding: 12px;
+  background: #eff6ff;
+  border: 2px dashed #93c5fd;
+  border-radius: 12px;
+}
+
+.word-bank {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin: 18px 0;
+}
+
+.word-chip {
+  padding: 10px 15px;
+  color: #1e3a8a;
+  background: white;
+  border: 2px solid #93c5fd;
+  border-radius: 10px;
+}
+
+.selected-chip {
+  padding: 9px 13px;
+  color: white;
+  background: #2563eb;
+  border-radius: 9px;
+}
+
+.order-buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+/* ミッション */
+
+.mission-card {
+  margin: 14px 0;
+  padding: 18px;
+  text-align: center;
+  background: linear-gradient(135deg,#fdf4ff,#faf5ff);
+  border: 2px solid #d946ef;
+  border-radius: 15px;
+}
+
+.mission-card .mission-title {
+  color: #86198f;
+  font-size: 15px;
+  font-weight: 900;
+}
+
+.mission-card .mission-text {
+  margin-top: 8px;
+  color: #701a75;
+  font-size: 21px;
+  font-weight: 900;
+  line-height: 1.5;
+}
+
+.mission-success {
+  margin: 15px 0;
+  padding: 15px;
+  color: #166534;
+  font-weight: 900;
+  background: #dcfce7;
+  border: 2px solid #22c55e;
+  border-radius: 12px;
+}
+
+.mission-fail {
+  margin: 15px 0;
+  padding: 15px;
+  color: #7c2d12;
   font-weight: 700;
+  background: #ffedd5;
+  border: 2px solid #fb923c;
+  border-radius: 12px;
 }
 
 /* ランキング */
 
 .ranking {
   width: 100%;
-  border-collapse: collapse;
   margin-top: 12px;
+  border-collapse: collapse;
 }
 
 .ranking th,
 .ranking td {
-  padding: 11px 6px;
-  border-bottom: 1px solid #e5e7eb;
+  padding: 11px 5px;
   text-align: center;
+  border-bottom: 1px solid #e5e7eb;
 }
 
 .ranking th {
-  background: #f8fafc;
   font-size: 13px;
+  background: #f8fafc;
 }
 
 .rank1 {
@@ -552,60 +661,37 @@ button:disabled {
 
 .sticker {
   display: inline-block;
-  font-size: 11px;
-  background: #ef4444;
-  color: white;
-  border-radius: 99px;
   padding: 3px 7px;
-  font-weight: 800;
-}
-
-/* 熟語並び替え */
-
-.order-answer {
-  min-height: 64px;
-  margin: 16px 0;
-  padding: 12px;
-  border: 2px dashed #93c5fd;
-  border-radius: 12px;
-  background: #eff6ff;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  justify-content: center;
-  align-items: center;
-}
-
-.word-bank {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  justify-content: center;
-  margin: 18px 0;
-}
-
-.word-chip {
-  background: white;
-  color: #1e3a8a;
-  border: 2px solid #93c5fd;
-  padding: 10px 15px;
-  border-radius: 10px;
-}
-
-.selected-chip {
-  background: #2563eb;
+  margin-top: 3px;
   color: white;
-  padding: 9px 13px;
-  border-radius: 9px;
+  font-size: 11px;
+  font-weight: 800;
+  background: #ef4444;
+  border-radius: 99px;
 }
 
-.order-buttons {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 8px;
+.mission-sticker {
+  background: #a21caf;
+}
+
+.achievement {
+  font-size: 18px;
+}
+
+.award-box {
+  margin: 16px 0;
+  padding: 15px;
+  background: #fffbea;
+  border: 2px solid #facc15;
+  border-radius: 13px;
+}
+
+.award-box h3 {
+  margin-bottom: 8px;
 }
 
 @media(max-width:600px) {
+
   header h1 {
     font-size: 22px;
   }
@@ -618,25 +704,25 @@ button:disabled {
     grid-template-columns: 1fr 1fr;
   }
 
-  .section-option {
-    min-height: 56px;
-    padding: 10px;
+  .challenge-mode-grid {
+    grid-template-columns: 1fr;
   }
 
   .question {
     font-size: 22px;
   }
 
-  .challenge-mode-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .statgrid {
+  .ranking {
     font-size: 13px;
   }
 
-  .time-choice label {
-    padding: 12px 4px;
+  .ranking th,
+  .ranking td {
+    padding: 9px 3px;
+  }
+
+  .mission-card .mission-text {
+    font-size: 18px;
   }
 }
 </style>
@@ -652,64 +738,78 @@ button:disabled {
 <div class="container">
 
 <div id="firebaseStatus" class="firebase-status">
-  Firebaseに接続しています…
+Firebaseに接続しています…
 </div>
 
-<!-- ホーム -->
+
+<!-- HOME -->
 
 <section id="home" class="card">
 
-  <h2>学習モードを選んでください</h2>
+<h2>学習モードを選んでください</h2>
 
-  <div class="notice">
-    ランキングでは本名を使わず、
-    <strong>「1-12」「A組15番」など</strong>
-    を使ってください。
-  </div>
+<div class="notice">
+<strong>表示名の先頭にクラスのアルファベットを付けてください。</strong><br>
+例：C組12番 → <strong>C12</strong><br>
+A組なら A、B組なら B、C組なら C から始めます。
+</div>
 
-  <label for="globalNickname">表示名</label>
+<label for="globalNickname">表示名</label>
 
-  <input
-    id="globalNickname"
-    type="text"
-    maxlength="20"
-    placeholder="例：1-12"
-    autocomplete="off"
-  >
+<input
+  id="globalNickname"
+  type="text"
+  maxlength="20"
+  placeholder="例：C12"
+  autocomplete="off"
+>
 
-  <div class="home-grid">
+<div id="detectedClass" class="small"></div>
 
-    <div class="home-option">
-      <div class="home-icon">📘</div>
-      <h3>通常練習</h3>
-      <p class="small">
-        自分のペースで単語・熟語を練習します。
-      </p>
-      <button
-        id="openNormalButton"
-        class="primary"
-        type="button">
-        通常練習
-      </button>
-    </div>
+<div class="home-grid">
 
-    <div class="home-option">
-      <div class="home-icon">🔥</div>
-      <h3>タイムチャレンジ</h3>
-      <p class="small">
-        制限時間内にできるだけ多くポイントを取ろう！
-      </p>
-      <button
-        id="openChallengeButton"
-        class="challenge-button"
-        type="button">
-        チャレンジ
-      </button>
-    </div>
+<div class="home-option">
 
-  </div>
+<div class="home-icon">📘</div>
 
-  <div id="homeError" class="error-box hidden"></div>
+<h3>通常練習</h3>
+
+<p class="small">
+自分のペースで単語・熟語を練習します。
+</p>
+
+<button
+  id="openNormalButton"
+  class="primary"
+  type="button">
+通常練習
+</button>
+
+</div>
+
+
+<div class="home-option">
+
+<div class="home-icon">🔥</div>
+
+<h3>タイムチャレンジ</h3>
+
+<p class="small">
+ポイント・ミッション・クラス別ランキングに挑戦！
+</p>
+
+<button
+  id="openChallengeButton"
+  class="challenge-button"
+  type="button">
+チャレンジ
+</button>
+
+</div>
+
+</div>
+
+<div id="homeError" class="error-box hidden"></div>
 
 </section>
 
@@ -718,143 +818,167 @@ button:disabled {
 
 <section id="normalSetup" class="card hidden">
 
-  <h2>📘 通常練習</h2>
+<h2>📘 通常練習</h2>
 
-  <label>出題するSection</label>
+<label>出題するSection</label>
 
-  <div class="sections">
+<div class="sections">
 
-    <label class="section-option">
-      <input type="checkbox" class="sectionCheck" value="1" checked>
-      <span>Section 1</span>
-    </label>
+<label class="section-option">
+<input type="checkbox" class="sectionCheck" value="1" checked>
+<span>Section 1</span>
+</label>
 
-    <label class="section-option">
-      <input type="checkbox" class="sectionCheck" value="2" checked>
-      <span>Section 2</span>
-    </label>
+<label class="section-option">
+<input type="checkbox" class="sectionCheck" value="2" checked>
+<span>Section 2</span>
+</label>
 
-    <label class="section-option">
-      <input type="checkbox" class="sectionCheck" value="3" checked>
-      <span>Section 3</span>
-    </label>
+<label class="section-option">
+<input type="checkbox" class="sectionCheck" value="3" checked>
+<span>Section 3</span>
+</label>
 
-    <label class="section-option">
-      <input type="checkbox" class="sectionCheck" value="4" checked>
-      <span>Section 4</span>
-    </label>
+<label class="section-option">
+<input type="checkbox" class="sectionCheck" value="4" checked>
+<span>Section 4</span>
+</label>
 
-  </div>
+</div>
 
-  <label for="category">問題の種類</label>
 
-  <select id="category">
-    <option value="all">単語＋熟語</option>
-    <option value="word">単語だけ</option>
-    <option value="phrase">熟語だけ</option>
-  </select>
+<label for="category">問題の種類</label>
 
-  <label for="direction">出題方向</label>
+<select id="category">
+<option value="all">単語＋熟語</option>
+<option value="word">単語だけ</option>
+<option value="phrase">熟語だけ</option>
+</select>
 
-  <select id="direction">
-    <option value="mixed">英語→日本語 ＋ 日本語→英語</option>
-    <option value="en-ja">英語 → 日本語</option>
-    <option value="ja-en">日本語 → 英語</option>
-  </select>
 
-  <p class="small">
-    単語の日本語→英語はスペル入力、
-    熟語の日本語→英語は並び替えです。
-  </p>
+<label for="direction">出題方向</label>
 
-  <label for="questionCount">問題数</label>
+<select id="direction">
+<option value="mixed">英語→日本語 ＋ 日本語→英語</option>
+<option value="en-ja">英語 → 日本語</option>
+<option value="ja-en">日本語 → 英語</option>
+</select>
 
-  <select id="questionCount">
-    <option value="5">5問</option>
-    <option value="10" selected>10問</option>
-    <option value="20">20問</option>
-    <option value="999">すべて</option>
-  </select>
 
-  <button id="startNormalButton" class="primary" type="button">
-    クイズスタート
-  </button>
+<p class="small">
+単語の日本語→英語はスペル入力、
+熟語の日本語→英語は並べ替えです。
+</p>
 
-  <button id="normalBackButton" class="secondary" type="button">
-    ホームに戻る
-  </button>
 
-  <div id="normalSetupError" class="error-box hidden"></div>
+<label for="questionCount">問題数</label>
+
+<select id="questionCount">
+<option value="5">5問</option>
+<option value="10" selected>10問</option>
+<option value="20">20問</option>
+<option value="999">すべて</option>
+</select>
+
+
+<button
+  id="startNormalButton"
+  class="primary"
+  type="button">
+クイズスタート
+</button>
+
+<button
+  id="normalBackButton"
+  class="secondary"
+  type="button">
+ホームに戻る
+</button>
+
+<div id="normalSetupError" class="error-box hidden"></div>
 
 </section>
 
 
-<!-- 通常クイズ -->
+<!-- 通常練習問題 -->
 
 <section id="normalQuiz" class="card quiz-card hidden">
 
-  <div id="normalStatus"></div>
+<div id="normalStatus"></div>
 
-  <div class="progress">
-    <div id="normalProgressBar" class="progress-bar"></div>
-  </div>
+<div class="progress">
+<div id="normalProgressBar" class="progress-bar"></div>
+</div>
 
-  <span id="normalSectionBadge" class="badge"></span>
-  <span id="normalTypeBadge" class="badge"></span>
+<span id="normalSectionBadge" class="badge"></span>
+<span id="normalTypeBadge" class="badge"></span>
 
-  <p id="normalInstruction" class="instruction"></p>
+<p id="normalInstruction" class="instruction"></p>
 
-  <div id="normalQuestion" class="question"></div>
+<div id="normalQuestion" class="question"></div>
 
-  <div id="normalChoices" class="choices"></div>
+<div id="normalChoices" class="choices"></div>
 
-  <div id="normalSpellArea" class="hidden">
 
-    <input
-      id="normalSpellInput"
-      class="spell"
-      type="text"
-      autocomplete="off"
-      autocapitalize="none"
-      spellcheck="false"
-      placeholder="英語を入力"
-    >
+<div id="normalSpellArea" class="hidden">
 
-    <button id="normalSpellButton" class="primary" type="button">
-      答える
-    </button>
+<input
+  id="normalSpellInput"
+  class="spell"
+  type="text"
+  autocomplete="off"
+  autocapitalize="none"
+  spellcheck="false"
+  placeholder="英語を入力"
+>
 
-  </div>
+<button
+  id="normalSpellButton"
+  class="primary"
+  type="button">
+答える
+</button>
 
-  <div id="normalOrderArea" class="hidden">
+</div>
 
-    <p class="small">
-      語句を正しい順番にクリックしてください。
-      「～」「…」は並べる必要はありません。
-    </p>
 
-    <div id="normalOrderAnswer" class="order-answer"></div>
-    <div id="normalWordBank" class="word-bank"></div>
+<div id="normalOrderArea" class="hidden">
 
-    <div class="order-buttons">
+<p class="small">
+語句を正しい順番に並べてください。
+</p>
 
-      <button id="normalOrderResetButton" class="secondary" type="button">
-        やり直す
-      </button>
+<div id="normalOrderAnswer" class="order-answer"></div>
+<div id="normalWordBank" class="word-bank"></div>
 
-      <button id="normalOrderCheckButton" class="primary" type="button">
-        答える
-      </button>
+<div class="order-buttons">
 
-    </div>
+<button
+  id="normalOrderResetButton"
+  class="secondary"
+  type="button">
+やり直す
+</button>
 
-  </div>
+<button
+  id="normalOrderCheckButton"
+  class="primary"
+  type="button">
+答える
+</button>
 
-  <div id="normalFeedback" class="feedback"></div>
+</div>
 
-  <button id="normalNextButton" class="primary hidden" type="button">
-    次の問題へ
-  </button>
+</div>
+
+<div id="normalFeedback" class="feedback"></div>
+
+<button
+  id="normalNextButton"
+  class="primary hidden"
+  type="button">
+次の問題へ
+</button>
 
 </section>
 
@@ -863,184 +987,245 @@ button:disabled {
 
 <section id="normalResult" class="card quiz-card hidden">
 
-  <h2>結果</h2>
+<h2>結果</h2>
 
-  <div id="normalFinalScore" class="score-big"></div>
+<div id="normalFinalScore" class="score-big"></div>
 
-  <div class="statgrid">
+<div class="statgrid">
 
-    <div class="stat">
-      <strong id="normalCorrectStat">0</strong>
-      正解
-    </div>
+<div class="stat">
+<strong id="normalCorrectStat">0</strong>
+正解
+</div>
 
-    <div class="stat">
-      <strong id="normalWrongStat">0</strong>
-      不正解
-    </div>
+<div class="stat">
+<strong id="normalWrongStat">0</strong>
+不正解
+</div>
 
-    <div class="stat">
-      <strong id="normalRateStat">0%</strong>
-      正答率
-    </div>
+<div class="stat">
+<strong id="normalRateStat">0%</strong>
+正答率
+</div>
 
-  </div>
+</div>
 
-  <p id="normalResultMessage"></p>
+<p id="normalResultMessage"></p>
 
-  <h2>間違えた問題</h2>
+<h2>間違えた問題</h2>
 
-  <div id="normalReview"></div>
+<div id="normalReview"></div>
 
-  <button id="normalReviewMistakesButton" class="review-button hidden" type="button">
-    🔁 間違えた問題だけ復習
-  </button>
+<button
+  id="normalReviewMistakesButton"
+  class="review-button hidden"
+  type="button">
+🔁 間違えた問題だけ復習
+</button>
 
-  <button id="normalRestartButton" class="primary" type="button">
-    設定に戻る
-  </button>
+<button
+  id="normalRestartButton"
+  class="primary"
+  type="button">
+設定に戻る
+</button>
 
-  <button id="normalHomeButton" class="secondary" type="button">
-    ホームに戻る
-  </button>
+<button
+  id="normalHomeButton"
+  class="secondary"
+  type="button">
+ホームに戻る
+</button>
 
 </section>
 
 
-<!-- タイムチャレンジ設定 -->
+<!-- チャレンジ設定 -->
 
 <section id="challengeSetup" class="card hidden">
 
-  <h2>🔥 タイムチャレンジ</h2>
+<h2>🔥 タイムチャレンジ</h2>
 
-  <div class="notice challenge-notice">
-    <strong>① Section → ② 制限時間</strong>
-    を選んでからスタートしてください。
-  </div>
+<div id="challengeClassPreview" class="selected-range"></div>
 
-  <label>① 出題するSection</label>
+<div class="notice challenge-notice">
+<strong>① Section → ② 制限時間</strong>
+を選んでスタートしてください。
+</div>
 
-  <div class="sections">
 
-    <label class="section-option">
-      <input
-        type="checkbox"
-        class="challengeSectionCheck"
-        value="1"
-        checked>
-      <span>Section 1</span>
-    </label>
+<label>① 出題するSection</label>
 
-    <label class="section-option">
-      <input
-        type="checkbox"
-        class="challengeSectionCheck"
-        value="2"
-        checked>
-      <span>Section 2</span>
-    </label>
+<div class="sections">
 
-    <label class="section-option">
-      <input
-        type="checkbox"
-        class="challengeSectionCheck"
-        value="3"
-        checked>
-      <span>Section 3</span>
-    </label>
+<label class="section-option">
+<input
+  type="checkbox"
+  class="challengeSectionCheck"
+  value="1"
+  checked>
+<span>Section 1</span>
+</label>
 
-    <label class="section-option">
-      <input
-        type="checkbox"
-        class="challengeSectionCheck"
-        value="4"
-        checked>
-      <span>Section 4</span>
-    </label>
+<label class="section-option">
+<input
+  type="checkbox"
+  class="challengeSectionCheck"
+  value="2"
+  checked>
+<span>Section 2</span>
+</label>
 
-  </div>
+<label class="section-option">
+<input
+  type="checkbox"
+  class="challengeSectionCheck"
+  value="3"
+  checked>
+<span>Section 3</span>
+</label>
 
-  <p class="small">
-    枠全体をタップして選択・解除できます。<br>
-    選んだSectionだけから問題が出題されます。
-    ランキングも同じSection構成の人だけで集計されます。
-  </p>
+<label class="section-option">
+<input
+  type="checkbox"
+  class="challengeSectionCheck"
+  value="4"
+  checked>
+<span>Section 4</span>
+</label>
 
-  <label>② 制限時間</label>
+</div>
 
-  <div class="time-select-grid">
 
-    <div class="time-choice">
-      <input type="radio" name="duration" id="duration2" value="2" checked>
-      <label for="duration2">
-        <strong>2分</strong>
-        短期決戦
-      </label>
-    </div>
+<label>② 制限時間</label>
 
-    <div class="time-choice">
-      <input type="radio" name="duration" id="duration3" value="3">
-      <label for="duration3">
-        <strong>3分</strong>
-        標準
-      </label>
-    </div>
+<div class="time-select-grid">
 
-    <div class="time-choice">
-      <input type="radio" name="duration" id="duration5" value="5">
-      <label for="duration5">
-        <strong>5分</strong>
-        じっくり
-      </label>
-    </div>
+<div class="time-choice">
 
-  </div>
+<input
+  type="radio"
+  name="duration"
+  id="duration2"
+  value="2"
+  checked>
 
-  <div class="challenge-mode-grid">
+<label for="duration2">
+<strong>2分</strong>
+短期決戦
+</label>
 
-    <div class="mode-card one">
-      <strong>1 pt</strong>
-      <span>
-        英語 → 日本語<br>
-        4択 × 5問
-      </span>
-    </div>
+</div>
 
-    <div class="mode-card three">
-      <strong>3 pt</strong>
-      <span>
-        日本語 → 英熟語<br>
-        4択 × 5問
-      </span>
-    </div>
 
-    <div class="mode-card five">
-      <strong>5 pt</strong>
-      <span>
-        日本語 → 英単語<br>
-        スペル × 5問
-      </span>
-    </div>
+<div class="time-choice">
 
-  </div>
+<input
+  type="radio"
+  name="duration"
+  id="duration3"
+  value="3">
 
-  <div class="notice">
-    ・ポイントの種類を1回選ぶと<strong>5問連続</strong>で出題されます。<br>
-    ・5問終了後、もう一度ポイントを選べます。<br>
-    ・途中で時間になったら、その場で終了します。<br>
-    ・正解だけ加点され、不正解による減点はありません。<br>
-    ・チャレンジ完了者だけランキングを見ることができます。
-  </div>
+<label for="duration3">
+<strong>3分</strong>
+標準
+</label>
 
-  <button id="startChallengeButton" class="challenge-button" type="button">
-    チャレンジ開始
-  </button>
+</div>
 
-  <button id="challengeSetupBackButton" class="secondary" type="button">
-    ホームに戻る
-  </button>
 
-  <div id="challengeSetupError" class="error-box hidden"></div>
+<div class="time-choice">
+
+<input
+  type="radio"
+  name="duration"
+  id="duration5"
+  value="5">
+
+<label for="duration5">
+<strong>5分</strong>
+じっくり
+</label>
+
+</div>
+
+</div>
+
+
+<div class="challenge-mode-grid">
+
+<div class="mode-card one">
+
+<strong>1 pt</strong>
+
+<span>
+英語 → 日本語<br>
+4択 × 5問<br>
+不正解 −1
+</span>
+
+</div>
+
+
+<div class="mode-card three">
+
+<strong>3 pt</strong>
+
+<span>
+日本語 → 英熟語<br>
+並べ替え × 5問<br>
+不正解 −1
+</span>
+
+</div>
+
+
+<div class="mode-card five">
+
+<strong>5 pt</strong>
+
+<span>
+日本語 → 英単語<br>
+スペル × 5問<br>
+不正解 −1
+</span>
+
+</div>
+
+</div>
+
+
+<div class="notice">
+<strong>得点ルール</strong><br>
+1点問題：正解 +1 / 不正解 −1<br>
+3点問題：正解 +3 / 不正解 −1<br>
+5点問題：正解 +5 / 不正解 −1<br>
+※ 得点は0点未満にはなりません。
+</div>
+
+
+<div class="notice">
+🏆 クラスごとの<strong>総合1位</strong>にシール1枚<br>
+🎯 <strong>今日のミッション達成者</strong>の中から1名にシール1枚<br>
+※ 総合1位はミッション賞候補から除外します。
+</div>
+
+
+<button
+  id="startChallengeButton"
+  class="challenge-button"
+  type="button">
+今日のミッションを確認してスタート
+</button>
+
+<button
+  id="challengeSetupBackButton"
+  class="secondary"
+  type="button">
+ホームに戻る
+</button>
+
+<div id="challengeSetupError" class="error-box hidden"></div>
 
 </section>
 
@@ -1049,102 +1234,211 @@ button:disabled {
 
 <section id="challengeQuiz" class="card quiz-card hidden">
 
-  <div class="challenge-header">
+<div class="challenge-header">
 
-    <div id="timerBox" class="timer-box">
-      <span class="timer-label">残り時間</span>
-      <span id="challengeTimer" class="timer-value">02:00</span>
-    </div>
+<div id="timerBox" class="timer-box">
 
-    <div class="points-box">
-      <span class="points-label">現在のポイント</span>
-      <span id="challengePoints" class="points-value">0 pt</span>
-    </div>
+<span class="timer-label">残り時間</span>
 
-  </div>
+<span
+  id="challengeTimer"
+  class="timer-value">
+02:00
+</span>
 
-  <div id="challengeRangeDisplay" class="selected-range"></div>
+</div>
 
-  <div id="challengeChooser">
 
-    <h3>次の5問を選んでください</h3>
+<div class="points-box">
 
-    <div class="challenge-mode-grid">
+<span class="points-label">現在のポイント</span>
 
-      <div class="mode-card one">
-        <strong>1 pt</strong>
-        <span>意味4択 × 5問</span>
-        <button id="challengeOneButton" class="mode-button one-button" type="button">
-          1点問題に挑戦
-        </button>
-      </div>
+<span
+  id="challengePoints"
+  class="points-value">
+0 pt
+</span>
 
-      <div class="mode-card three">
-        <strong>3 pt</strong>
-        <span>熟語4択 × 5問</span>
-        <button id="challengeThreeButton" class="mode-button three-button" type="button">
-          3点問題に挑戦
-        </button>
-      </div>
+</div>
 
-      <div class="mode-card five">
-        <strong>5 pt</strong>
-        <span>単語スペル × 5問</span>
-        <button id="challengeFiveButton" class="mode-button five-button" type="button">
-          5点問題に挑戦
-        </button>
-      </div>
+</div>
 
-    </div>
 
-  </div>
+<div id="challengeRangeDisplay" class="selected-range"></div>
 
-  <div id="challengeQuestionArea" class="hidden">
+<div id="challengeMissionCard" class="mission-card">
 
-    <div id="challengeSetStatus" class="set-status"></div>
+<div class="mission-title">
+🎯 TODAY'S MISSION
+</div>
 
-    <div id="challengeTypeLabel"></div>
+<div
+  id="challengeMissionText"
+  class="mission-text">
+</div>
 
-    <span id="challengeSectionBadge" class="badge"></span>
+</div>
 
-    <p id="challengeInstruction" class="instruction"></p>
 
-    <div id="challengeQuestion" class="question"></div>
+<div id="challengeChooser">
 
-    <div id="challengeChoices" class="choices"></div>
+<h3>次の5問を選んでください</h3>
 
-    <div id="challengeSpellArea" class="hidden">
+<div class="challenge-mode-grid">
 
-      <input
-        id="challengeSpellInput"
-        class="spell"
-        type="text"
-        autocomplete="off"
-        autocapitalize="none"
-        spellcheck="false"
-        placeholder="英単語を入力"
-      >
+<div class="mode-card one">
 
-      <button id="challengeSpellButton" class="primary" type="button">
-        答える
-      </button>
+<strong>1 pt</strong>
 
-    </div>
+<span>
+意味4択 × 5問
+</span>
 
-    <div id="challengeFeedback" class="feedback"></div>
+<button
+  id="challengeOneButton"
+  class="mode-button one-button"
+  type="button">
+1点問題に挑戦
+</button>
 
-    <button id="challengeNextButton" class="primary hidden" type="button">
-      次の問題へ
-    </button>
+</div>
 
-  </div>
 
-  <div class="notice">
-    正解：
-    <strong id="challengeCorrectCount">0</strong>問　
-    挑戦：
-    <strong id="challengeAnsweredCount">0</strong>問
-  </div>
+<div class="mode-card three">
+
+<strong>3 pt</strong>
+
+<span>
+熟語並べ替え × 5問
+</span>
+
+<button
+  id="challengeThreeButton"
+  class="mode-button three-button"
+  type="button">
+3点問題に挑戦
+</button>
+
+</div>
+
+
+<div class="mode-card five">
+
+<strong>5 pt</strong>
+
+<span>
+単語スペル × 5問
+</span>
+
+<button
+  id="challengeFiveButton"
+  class="mode-button five-button"
+  type="button">
+5点問題に挑戦
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div id="challengeQuestionArea" class="hidden">
+
+<div id="challengeSetStatus" class="set-status"></div>
+
+<div id="challengeTypeLabel"></div>
+
+<span id="challengeSectionBadge" class="badge"></span>
+
+<p id="challengeInstruction" class="instruction"></p>
+
+<div id="challengeQuestion" class="question"></div>
+
+
+<!-- 1点問題 -->
+
+<div id="challengeChoices" class="choices"></div>
+
+
+<!-- 3点熟語並べ替え -->
+
+<div id="challengeOrderArea" class="hidden">
+
+<div
+  id="challengeOrderAnswer"
+  class="order-answer">
+</div>
+
+<div
+  id="challengeWordBank"
+  class="word-bank">
+</div>
+
+<div class="order-buttons">
+
+<button
+  id="challengeOrderResetButton"
+  class="secondary"
+  type="button">
+やり直す
+</button>
+
+<button
+  id="challengeOrderCheckButton"
+  class="primary"
+  type="button">
+答える
+</button>
+
+</div>
+
+</div>
+
+
+<!-- 5点スペル -->
+
+<div id="challengeSpellArea" class="hidden">
+
+<input
+  id="challengeSpellInput"
+  class="spell"
+  type="text"
+  autocomplete="off"
+  autocapitalize="none"
+  spellcheck="false"
+  placeholder="英単語を入力"
+>
+
+<button
+  id="challengeSpellButton"
+  class="primary"
+  type="button">
+答える
+</button>
+
+</div>
+
+
+<div id="challengeFeedback" class="feedback"></div>
+
+<button
+  id="challengeNextButton"
+  class="primary hidden"
+  type="button">
+次の問題へ
+</button>
+
+</div>
+
+
+<div class="notice">
+正解：
+<strong id="challengeCorrectCount">0</strong>問　
+挑戦：
+<strong id="challengeAnsweredCount">0</strong>問
+</div>
 
 </section>
 
@@ -1153,48 +1447,59 @@ button:disabled {
 
 <section id="challengeResult" class="card quiz-card hidden">
 
-  <h2>⏰ TIME UP!</h2>
+<h2>⏰ TIME UP!</h2>
 
-  <p id="challengeResultDuration"></p>
+<p id="challengeResultDuration"></p>
 
-  <div id="challengeResultSections" class="selected-range"></div>
+<div id="challengeResultClass" class="class-badge"></div>
 
-  <div id="challengeFinalPoints" class="challenge-score">
-    0 pt
-  </div>
+<div id="challengeResultSections" class="selected-range"></div>
 
-  <div class="statgrid">
+<div id="challengeFinalPoints" class="challenge-score">
+0 pt
+</div>
 
-    <div class="stat">
-      <strong id="challengeFinalCorrect">0</strong>
-      正解
-    </div>
+<div class="statgrid">
 
-    <div class="stat">
-      <strong id="challengeFinalAnswered">0</strong>
-      挑戦
-    </div>
+<div class="stat">
+<strong id="challengeFinalCorrect">0</strong>
+正解
+</div>
 
-    <div class="stat">
-      <strong id="challengeFinalRate">0%</strong>
-      正答率
-    </div>
+<div class="stat">
+<strong id="challengeFinalAnswered">0</strong>
+挑戦
+</div>
 
-  </div>
+<div class="stat">
+<strong id="challengeFinalRate">0%</strong>
+正答率
+</div>
 
-  <p id="challengeSaveStatus">
-    結果を保存しています…
-  </p>
+</div>
 
-  <div id="challengeRankSelf" class="rank-self"></div>
 
-  <button id="openRankingButton" class="success-button hidden" type="button">
-    🏆 ランキングを見る
-  </button>
+<div id="challengeMissionResult"></div>
 
-  <button id="challengeResultHomeButton" class="secondary" type="button">
-    ホームに戻る
-  </button>
+<p id="challengeSaveStatus">
+結果を保存しています…
+</p>
+
+<div id="challengeRankSelf" class="rank-self"></div>
+
+<button
+  id="openRankingButton"
+  class="success-button hidden"
+  type="button">
+🏆 クラスランキングを見る
+</button>
+
+<button
+  id="challengeResultHomeButton"
+  class="secondary"
+  type="button">
+ホームに戻る
+</button>
 
 </section>
 
@@ -1203,30 +1508,39 @@ button:disabled {
 
 <section id="rankingSection" class="card hidden">
 
-  <h2 id="rankingTitle">
-    🏆 今日のランキング
-  </h2>
+<h2 id="rankingTitle">
+🏆 今日のランキング
+</h2>
 
-  <div id="rankingRange" class="selected-range"></div>
+<div id="rankingRange" class="selected-range"></div>
 
-  <p class="small">
-    このチャレンジを完了した人だけ閲覧できます。<br>
-    順位は
-    <strong>ポイント → 正解数 → 終了時刻</strong>
-    の順です。
-  </p>
+<div id="rankingMission" class="mission-card"></div>
 
-  <div id="rankingContent">
-    読み込み中…
-  </div>
+<div id="awardSummary"></div>
 
-  <button id="refreshRankingButton" class="secondary" type="button">
-    ランキング更新
-  </button>
+<p class="small">
+順位は「ポイント → 正解数 → 終了時刻」の順です。<br>
+🎯 はミッション達成者です。<br>
+全員のチャレンジ終了後に表示される内容を、最終結果として使用してください。
+</p>
 
-  <button id="rankingHomeButton" class="primary" type="button">
-    ホームに戻る
-  </button>
+<div id="rankingContent">
+読み込み中…
+</div>
+
+<button
+  id="refreshRankingButton"
+  class="secondary"
+  type="button">
+ランキング更新
+</button>
+
+<button
+  id="rankingHomeButton"
+  class="primary"
+  type="button">
+ホームに戻る
+</button>
 
 </section>
 
@@ -1257,6 +1571,10 @@ import {
 } from "https://www.gstatic.com/firebasejs/12.16.0/firebase-firestore.js";
 
 
+/* =========================================================
+   Firebase
+========================================================= */
+
 const firebaseConfig = {
   apiKey: "AIzaSyABHqBkN6_j_QOtPDuVgsvR49zXe8Dz9YM",
   authDomain: "lesson3-quiz.firebaseapp.com",
@@ -1274,9 +1592,9 @@ const db = getFirestore(app);
 let currentUser = null;
 
 
-/* =========================
-問題データ
-========================= */
+/* =========================================================
+   Lesson 3 問題データ
+========================================================= */
 
 const DATA = [
 
@@ -1353,9 +1671,9 @@ const DATA = [
 ];
 
 
-/* =========================
-共通
-========================= */
+/* =========================================================
+   共通
+========================================================= */
 
 const screens = [
   "home",
@@ -1371,9 +1689,14 @@ const screens = [
 function showScreen(id) {
 
   screens.forEach(screenId => {
+
     document
       .getElementById(screenId)
-      .classList.toggle("hidden", screenId !== id);
+      .classList.toggle(
+        "hidden",
+        screenId !== id
+      );
+
   });
 
   window.scrollTo({
@@ -1382,255 +1705,539 @@ function showScreen(id) {
   });
 }
 
+
 function shuffle(array) {
 
   const copy = [...array];
 
-  for (let i = copy.length - 1; i > 0; i--) {
+  for (
+    let i = copy.length - 1;
+    i > 0;
+    i--
+  ) {
 
-    const j = Math.floor(Math.random() * (i + 1));
+    const j =
+      Math.floor(
+        Math.random() *
+        (i + 1)
+      );
 
-    [copy[i], copy[j]] = [copy[j], copy[i]];
+    [
+      copy[i],
+      copy[j]
+    ] = [
+      copy[j],
+      copy[i]
+    ];
   }
 
   return copy;
 }
+
 
 function normalizeEnglish(text) {
 
   return String(text)
     .toLowerCase()
     .trim()
-    .replace(/[’‘]/g, "'")
-    .replace(/\s+/g, " ");
+    .replace(/[’‘]/g,"'")
+    .replace(/\s+/g," ");
+
 }
+
 
 function escapeHtml(text) {
 
-  const element = document.createElement("div");
-  element.textContent = String(text);
+  const element =
+    document.createElement("div");
+
+  element.textContent =
+    String(text);
 
   return element.innerHTML;
 }
 
+
 function getNickname() {
+
   return document
     .getElementById("globalNickname")
     .value
     .trim();
 }
 
-function requireNickname(errorId) {
 
-  const nickname = getNickname();
-  const error = document.getElementById(errorId);
+/* 先頭のアルファベットをクラスとして扱う */
+
+function getClassCode(
+  nickname = getNickname()
+) {
+
+  const match =
+    String(nickname)
+      .trim()
+      .match(/^([A-Za-z])/);
+
+  return match
+    ? match[1].toUpperCase()
+    : null;
+}
+
+
+function requireNicknameAndClass(
+  errorId
+) {
+
+  const nickname =
+    getNickname();
+
+  const error =
+    document.getElementById(errorId);
 
   error.classList.add("hidden");
 
   if (!nickname) {
 
-    error.textContent = "表示名を入力してください。";
+    error.textContent =
+      "表示名を入力してください。";
+
     error.classList.remove("hidden");
 
     return null;
   }
 
-  localStorage.setItem("lesson3Nickname", nickname);
+  const classCode =
+    getClassCode(nickname);
 
-  return nickname;
+  if (!classCode) {
+
+    error.textContent =
+      "表示名の先頭にクラスのアルファベットを付けてください。例：C組12番 → C12";
+
+    error.classList.remove("hidden");
+
+    return null;
+  }
+
+  localStorage.setItem(
+    "lesson3Nickname",
+    nickname
+  );
+
+  return {
+    nickname,
+    classCode
+  };
 }
+
 
 function getJstDateKey() {
 
-  const parts = new Intl.DateTimeFormat(
-    "en-CA",
-    {
-      timeZone: "Asia/Tokyo",
-      year: "numeric",
-      month: "2-digit",
-      day: "2-digit"
-    }
-  ).formatToParts(new Date());
+  const parts =
+    new Intl.DateTimeFormat(
+      "en-CA",
+      {
+        timeZone:"Asia/Tokyo",
+        year:"numeric",
+        month:"2-digit",
+        day:"2-digit"
+      }
+    )
+    .formatToParts(
+      new Date()
+    );
 
   const values = {};
 
   parts.forEach(part => {
-    values[part.type] = part.value;
+    values[part.type] =
+      part.value;
   });
 
-  return `${values.year}-${values.month}-${values.day}`;
+  return (
+    values.year +
+    "-" +
+    values.month +
+    "-" +
+    values.day
+  );
 }
 
 
-/* =========================
-Firebase認証
-========================= */
+/* シンプルな決定的ハッシュ */
 
-onAuthStateChanged(auth, async user => {
+function hashString(text) {
 
-  if (user) {
+  let hash = 2166136261;
 
-    currentUser = user;
+  for (
+    let i = 0;
+    i < text.length;
+    i++
+  ) {
 
-    document
-      .getElementById("firebaseStatus")
-      .textContent =
-        "✅ ランキングサーバーに接続しました";
+    hash ^=
+      text.charCodeAt(i);
+
+    hash =
+      Math.imul(
+        hash,
+        16777619
+      );
+  }
+
+  return hash >>> 0;
+}
+
+
+/* =========================================================
+   Firebase認証
+========================================================= */
+
+onAuthStateChanged(
+  auth,
+  async user => {
+
+    if (user) {
+
+      currentUser =
+        user;
+
+      document
+        .getElementById(
+          "firebaseStatus"
+        )
+        .textContent =
+          "✅ ランキングサーバーに接続しました";
+
+    } else {
+
+      try {
+
+        await signInAnonymously(
+          auth
+        );
+
+      } catch (error) {
+
+        console.error(
+          error
+        );
+
+        document
+          .getElementById(
+            "firebaseStatus"
+          )
+          .textContent =
+            "⚠ Firebaseへの接続に失敗しました";
+      }
+    }
+  }
+);
+
+
+/* =========================================================
+   名前・クラス表示
+========================================================= */
+
+const nicknameInput =
+  document.getElementById(
+    "globalNickname"
+  );
+
+
+function updateClassPreview() {
+
+  const nickname =
+    getNickname();
+
+  const code =
+    getClassCode(
+      nickname
+    );
+
+  const preview =
+    document.getElementById(
+      "detectedClass"
+    );
+
+  if (!nickname) {
+
+    preview.textContent =
+      "";
+
+    return;
+  }
+
+  if (code) {
+
+    preview.textContent =
+      `→ ${code}組としてランキングに登録されます。`;
+
+    preview.style.color =
+      "#15803d";
 
   } else {
 
-    try {
+    preview.textContent =
+      "⚠ 先頭にA〜Zのクラス記号を付けてください。";
 
-      await signInAnonymously(auth);
-
-    } catch (error) {
-
-      console.error(error);
-
-      document
-        .getElementById("firebaseStatus")
-        .textContent =
-          "⚠ Firebaseへの接続に失敗しました";
-    }
+    preview.style.color =
+      "#b91c1c";
   }
-});
+}
 
 
-/* =========================
-画面移動
-========================= */
+nicknameInput
+  .addEventListener(
+    "input",
+    updateClassPreview
+  );
 
-document
-  .getElementById("openNormalButton")
-  .addEventListener("click", () => {
 
-    if (requireNickname("homeError")) {
-      showScreen("normalSetup");
-    }
-  });
-
+/* =========================================================
+   画面移動
+========================================================= */
 
 document
-  .getElementById("openChallengeButton")
-  .addEventListener("click", () => {
+  .getElementById(
+    "openNormalButton"
+  )
+  .onclick = () => {
 
-    if (requireNickname("homeError")) {
-      showScreen("challengeSetup");
+    if (
+      requireNicknameAndClass(
+        "homeError"
+      )
+    ) {
+
+      showScreen(
+        "normalSetup"
+      );
     }
-  });
+  };
 
 
-document.getElementById("normalBackButton").onclick =
-  () => showScreen("home");
+document
+  .getElementById(
+    "openChallengeButton"
+  )
+  .onclick = () => {
 
-document.getElementById("normalHomeButton").onclick =
-  () => showScreen("home");
+    const info =
+      requireNicknameAndClass(
+        "homeError"
+      );
 
-document.getElementById("challengeSetupBackButton").onclick =
-  () => showScreen("home");
+    if (!info) {
+      return;
+    }
 
-document.getElementById("challengeResultHomeButton").onclick =
-  () => showScreen("home");
+    document
+      .getElementById(
+        "challengeClassPreview"
+      )
+      .textContent =
+        `クラス：${info.classCode}組　表示名：${info.nickname}`;
 
-document.getElementById("rankingHomeButton").onclick =
-  () => showScreen("home");
+    showScreen(
+      "challengeSetup"
+    );
+  };
 
 
-/* =========================
-通常練習
-========================= */
+document
+  .getElementById(
+    "normalBackButton"
+  )
+  .onclick =
+    () => showScreen("home");
+
+
+document
+  .getElementById(
+    "normalHomeButton"
+  )
+  .onclick =
+    () => showScreen("home");
+
+
+document
+  .getElementById(
+    "challengeSetupBackButton"
+  )
+  .onclick =
+    () => showScreen("home");
+
+
+document
+  .getElementById(
+    "challengeResultHomeButton"
+  )
+  .onclick =
+    () => showScreen("home");
+
+
+document
+  .getElementById(
+    "rankingHomeButton"
+  )
+  .onclick =
+    () => showScreen("home");
+
+
+/* =========================================================
+   通常練習
+========================================================= */
 
 let normalQuestions = [];
 let normalIndex = 0;
 let normalScore = 0;
 let normalMistakes = [];
 let normalLocked = false;
+
 let selectedOrderWords = [];
 
 
-document.getElementById("startNormalButton").onclick =
-  startNormalQuiz;
+document
+  .getElementById(
+    "startNormalButton"
+  )
+  .onclick =
+    startNormalQuiz;
 
 
 function startNormalQuiz() {
 
   const sections = [
-    ...document.querySelectorAll(".sectionCheck:checked")
-  ].map(element => Number(element.value));
+    ...document.querySelectorAll(
+      ".sectionCheck:checked"
+    )
+  ].map(
+    element =>
+      Number(
+        element.value
+      )
+  );
+
 
   const error =
-    document.getElementById("normalSetupError");
+    document.getElementById(
+      "normalSetupError"
+    );
 
-  error.classList.add("hidden");
+  error.classList.add(
+    "hidden"
+  );
+
 
   if (!sections.length) {
 
     error.textContent =
       "Sectionを1つ以上選んでください。";
 
-    error.classList.remove("hidden");
+    error.classList.remove(
+      "hidden"
+    );
 
     return;
   }
 
+
   const category =
-    document.getElementById("category").value;
+    document.getElementById(
+      "category"
+    ).value;
+
 
   const direction =
-    document.getElementById("direction").value;
+    document.getElementById(
+      "direction"
+    ).value;
+
 
   const count =
     Number(
-      document.getElementById("questionCount").value
+      document.getElementById(
+        "questionCount"
+      ).value
     );
 
+
   let pool =
-    DATA.filter(item =>
-      sections.includes(item.section)
+    DATA.filter(
+      item =>
+        sections.includes(
+          item.section
+        )
     );
+
 
   if (category !== "all") {
 
     pool =
-      pool.filter(item =>
-        item.type === category
+      pool.filter(
+        item =>
+          item.type ===
+          category
       );
   }
 
-  pool = shuffle(pool);
+
+  pool =
+    shuffle(
+      pool
+    );
+
 
   if (count !== 999) {
 
-    pool = pool.slice(
-      0,
-      Math.min(count, pool.length)
-    );
+    pool =
+      pool.slice(
+        0,
+        Math.min(
+          count,
+          pool.length
+        )
+      );
   }
 
+
   normalQuestions =
-    pool.map(item => {
+    pool.map(
+      item => {
 
-      let selectedDirection = direction;
+        let selectedDirection =
+          direction;
 
-      if (direction === "mixed") {
+        if (
+          direction ===
+          "mixed"
+        ) {
 
-        selectedDirection =
-          Math.random() < .5
-            ? "en-ja"
-            : "ja-en";
+          selectedDirection =
+            Math.random() < .5
+              ? "en-ja"
+              : "ja-en";
+        }
+
+        return {
+          ...item,
+          direction:
+            selectedDirection
+        };
       }
+    );
 
-      return {
-        ...item,
-        direction: selectedDirection
-      };
-    });
 
   normalIndex = 0;
   normalScore = 0;
   normalMistakes = [];
 
-  showScreen("normalQuiz");
+
+  showScreen(
+    "normalQuiz"
+  );
 
   showNormalQuestion();
 }
@@ -1638,142 +2245,258 @@ function startNormalQuiz() {
 
 function showNormalQuestion() {
 
-  normalLocked = false;
+  normalLocked =
+    false;
+
 
   const q =
-    normalQuestions[normalIndex];
+    normalQuestions[
+      normalIndex
+    ];
+
 
   document
-    .getElementById("normalStatus")
+    .getElementById(
+      "normalStatus"
+    )
     .textContent =
       `問題 ${normalIndex + 1} / ${normalQuestions.length}`;
 
-  document
-    .getElementById("normalProgressBar")
-    .style.width =
-      `${normalIndex / normalQuestions.length * 100}%`;
 
   document
-    .getElementById("normalSectionBadge")
+    .getElementById(
+      "normalProgressBar"
+    )
+    .style.width =
+      `${
+        normalIndex /
+        normalQuestions.length *
+        100
+      }%`;
+
+
+  document
+    .getElementById(
+      "normalSectionBadge"
+    )
     .textContent =
       `Section ${q.section}`;
 
+
   document
-    .getElementById("normalTypeBadge")
+    .getElementById(
+      "normalTypeBadge"
+    )
     .textContent =
       q.type === "word"
         ? "単語"
         : "熟語";
 
-  document
-    .getElementById("normalFeedback")
-    .textContent = "";
 
   document
-    .getElementById("normalNextButton")
-    .classList.add("hidden");
+    .getElementById(
+      "normalFeedback"
+    )
+    .textContent =
+      "";
+
 
   document
-    .getElementById("normalChoices")
-    .innerHTML = "";
+    .getElementById(
+      "normalNextButton"
+    )
+    .classList.add(
+      "hidden"
+    );
+
 
   document
-    .getElementById("normalSpellArea")
-    .classList.add("hidden");
+    .getElementById(
+      "normalChoices"
+    )
+    .innerHTML =
+      "";
+
 
   document
-    .getElementById("normalOrderArea")
-    .classList.add("hidden");
+    .getElementById(
+      "normalSpellArea"
+    )
+    .classList.add(
+      "hidden"
+    );
 
 
-  if (q.direction === "en-ja") {
+  document
+    .getElementById(
+      "normalOrderArea"
+    )
+    .classList.add(
+      "hidden"
+    );
+
+
+  if (
+    q.direction ===
+    "en-ja"
+  ) {
 
     document
-      .getElementById("normalInstruction")
+      .getElementById(
+        "normalInstruction"
+      )
       .textContent =
         "次の英語の意味を選んでください。";
 
+
     document
-      .getElementById("normalQuestion")
+      .getElementById(
+        "normalQuestion"
+      )
       .textContent =
         q.en;
 
+
     const wrong =
       shuffle(
-        DATA.filter(item =>
-          item.ja !== q.ja
+        DATA.filter(
+          item =>
+            item.ja !==
+            q.ja
         )
       )
-      .slice(0, 3)
-      .map(item => item.ja);
-
-    shuffle([
-      q.ja,
-      ...wrong
-    ]).forEach(answer => {
-
-      const button =
-        document.createElement("button");
-
-      button.type = "button";
-      button.className = "choice";
-      button.textContent = answer;
-
-      button.addEventListener(
-        "click",
-        () => checkNormalChoice(
-          button,
-          answer,
-          q
-        )
+      .slice(
+        0,
+        3
+      )
+      .map(
+        item =>
+          item.ja
       );
 
-      document
-        .getElementById("normalChoices")
-        .appendChild(button);
-    });
 
-  } else if (q.type === "word") {
+    shuffle(
+      [
+        q.ja,
+        ...wrong
+      ]
+    )
+    .forEach(
+      answer => {
+
+        const button =
+          document.createElement(
+            "button"
+          );
+
+        button.type =
+          "button";
+
+        button.className =
+          "choice";
+
+        button.textContent =
+          answer;
+
+
+        button.onclick =
+          () =>
+            checkNormalChoice(
+              button,
+              answer,
+              q
+            );
+
+
+        document
+          .getElementById(
+            "normalChoices"
+          )
+          .appendChild(
+            button
+          );
+      }
+    );
+
+  } else if (
+    q.type ===
+    "word"
+  ) {
 
     document
-      .getElementById("normalInstruction")
+      .getElementById(
+        "normalInstruction"
+      )
       .textContent =
         "次の日本語を英語にしてください。";
 
+
     document
-      .getElementById("normalQuestion")
+      .getElementById(
+        "normalQuestion"
+      )
       .textContent =
         q.ja;
 
-    const input =
-      document.getElementById("normalSpellInput");
 
-    input.value = "";
-    input.disabled = false;
+    const input =
+      document.getElementById(
+        "normalSpellInput"
+      );
+
+
+    input.value =
+      "";
+
+    input.disabled =
+      false;
+
 
     document
-      .getElementById("normalSpellArea")
-      .classList.remove("hidden");
+      .getElementById(
+        "normalSpellArea"
+      )
+      .classList.remove(
+        "hidden"
+      );
 
-    setTimeout(() => input.focus(), 50);
+
+    setTimeout(
+      () =>
+        input.focus(),
+      50
+    );
 
   } else {
 
     document
-      .getElementById("normalInstruction")
+      .getElementById(
+        "normalInstruction"
+      )
       .textContent =
         "語句を正しい順番に並べてください。";
 
+
     document
-      .getElementById("normalQuestion")
+      .getElementById(
+        "normalQuestion"
+      )
       .textContent =
         q.ja;
 
-    document
-      .getElementById("normalOrderArea")
-      .classList.remove("hidden");
 
-    setupOrder(q);
+    document
+      .getElementById(
+        "normalOrderArea"
+      )
+      .classList.remove(
+        "hidden"
+      );
+
+
+    setupNormalOrder(
+      q
+    );
   }
 }
 
@@ -1784,113 +2507,43 @@ function checkNormalChoice(
   q
 ) {
 
-  if (normalLocked) {
+  if (
+    normalLocked
+  ) {
     return;
   }
 
-  normalLocked = true;
+
+  normalLocked =
+    true;
+
 
   document
-    .querySelectorAll("#normalChoices .choice")
-    .forEach(item => {
+    .querySelectorAll(
+      "#normalChoices .choice"
+    )
+    .forEach(
+      item => {
 
-      item.disabled = true;
+        item.disabled =
+          true;
 
-      if (item.textContent === q.ja) {
-        item.classList.add("correct");
+        if (
+          item.textContent ===
+          q.ja
+        ) {
+
+          item.classList.add(
+            "correct"
+          );
+        }
       }
-    });
-
-  if (answer === q.ja) {
-
-    normalScore++;
-
-    normalFeedback(
-      true,
-      "正解！"
     );
 
-  } else {
-
-    button.classList.add("wrong");
-
-    normalMistakes.push({
-      ...q,
-      userAnswer: answer
-    });
-
-    normalFeedback(
-      false,
-      `不正解　正解：${q.ja}`
-    );
-  }
-
-  document
-    .getElementById("normalNextButton")
-    .classList.remove("hidden");
-}
-
-
-function normalFeedback(
-  correct,
-  text
-) {
-
-  const box =
-    document.getElementById("normalFeedback");
-
-  box.textContent = text;
-
-  box.className =
-    "feedback " +
-    (correct ? "good" : "bad");
-}
-
-
-document
-  .getElementById("normalSpellButton")
-  .onclick =
-    checkNormalSpell;
-
-
-document
-  .getElementById("normalSpellInput")
-  .addEventListener(
-    "keydown",
-    event => {
-
-      if (event.key === "Enter") {
-        checkNormalSpell();
-      }
-    }
-  );
-
-
-function checkNormalSpell() {
-
-  if (normalLocked) {
-    return;
-  }
-
-  const q =
-    normalQuestions[normalIndex];
-
-  const input =
-    document.getElementById("normalSpellInput");
-
-  const answer =
-    input.value.trim();
-
-  if (!answer) {
-    return;
-  }
-
-  normalLocked = true;
-  input.disabled = true;
 
   if (
-    normalizeEnglish(answer) ===
-    normalizeEnglish(q.en)
+    answer ===
+    q.ja
   ) {
 
     normalScore++;
@@ -1902,10 +2555,146 @@ function checkNormalSpell() {
 
   } else {
 
-    normalMistakes.push({
-      ...q,
-      userAnswer: answer
-    });
+    button.classList.add(
+      "wrong"
+    );
+
+    normalMistakes.push(
+      {
+        ...q,
+        userAnswer:
+          answer
+      }
+    );
+
+    normalFeedback(
+      false,
+      `不正解　正解：${q.ja}`
+    );
+  }
+
+
+  document
+    .getElementById(
+      "normalNextButton"
+    )
+    .classList.remove(
+      "hidden"
+    );
+}
+
+
+function normalFeedback(
+  correct,
+  text
+) {
+
+  const box =
+    document.getElementById(
+      "normalFeedback"
+    );
+
+  box.textContent =
+    text;
+
+  box.className =
+    "feedback " +
+    (
+      correct
+        ? "good"
+        : "bad"
+    );
+}
+
+
+document
+  .getElementById(
+    "normalSpellButton"
+  )
+  .onclick =
+    checkNormalSpell;
+
+
+document
+  .getElementById(
+    "normalSpellInput"
+  )
+  .onkeydown =
+    event => {
+
+      if (
+        event.key ===
+        "Enter"
+      ) {
+
+        checkNormalSpell();
+      }
+    };
+
+
+function checkNormalSpell() {
+
+  if (
+    normalLocked
+  ) {
+    return;
+  }
+
+
+  const q =
+    normalQuestions[
+      normalIndex
+    ];
+
+
+  const input =
+    document.getElementById(
+      "normalSpellInput"
+    );
+
+
+  const answer =
+    input.value.trim();
+
+
+  if (!answer) {
+    return;
+  }
+
+
+  normalLocked =
+    true;
+
+  input.disabled =
+    true;
+
+
+  if (
+    normalizeEnglish(
+      answer
+    ) ===
+    normalizeEnglish(
+      q.en
+    )
+  ) {
+
+    normalScore++;
+
+    normalFeedback(
+      true,
+      "正解！"
+    );
+
+  } else {
+
+    normalMistakes.push(
+      {
+        ...q,
+        userAnswer:
+          answer
+      }
+    );
+
 
     normalFeedback(
       false,
@@ -1913,55 +2702,86 @@ function checkNormalSpell() {
     );
   }
 
+
   document
-    .getElementById("normalNextButton")
-    .classList.remove("hidden");
+    .getElementById(
+      "normalNextButton"
+    )
+    .classList.remove(
+      "hidden"
+    );
 }
 
 
-function phraseWords(en) {
+/* 通常練習の熟語は記号を除く */
+
+function normalPhraseWords(
+  en
+) {
 
   return String(en)
-    .replace(/[()]/g, " ")
-    .replace(/[～〜]/g, " ")
-    .replace(/\.\.\./g, " ")
-    .replace(/…/g, " ")
+    .replace(/[()]/g," ")
+    .replace(/[～〜]/g," ")
+    .replace(/\.\.\./g," ")
+    .replace(/…/g," ")
     .trim()
     .split(/\s+/)
     .filter(Boolean);
 }
 
 
-function setupOrder(q) {
+function setupNormalOrder(
+  q
+) {
 
-  selectedOrderWords = [];
+  selectedOrderWords =
+    [];
+
 
   const bank =
-    document.getElementById("normalWordBank");
+    document.getElementById(
+      "normalWordBank"
+    );
 
-  bank.innerHTML = "";
+
+  bank.innerHTML =
+    "";
+
 
   const items =
-    phraseWords(q.en)
-      .map(
-        (word, id) => ({
-          word,
-          id
-        })
-      );
+    normalPhraseWords(
+      q.en
+    )
+    .map(
+      (word,id) => ({
+        word,
+        id
+      })
+    );
 
-  shuffle(items)
-    .forEach(item => {
+
+  shuffle(
+    items
+  )
+  .forEach(
+    item => {
 
       const button =
-        document.createElement("button");
+        document.createElement(
+          "button"
+        );
 
-      button.type = "button";
-      button.className = "word-chip";
-      button.textContent = item.word;
+      button.type =
+        "button";
 
-      button.addEventListener(
-        "click",
+      button.className =
+        "word-chip";
+
+      button.textContent =
+        item.word;
+
+
+      button.onclick =
         () => {
 
           if (
@@ -1971,32 +2791,48 @@ function setupOrder(q) {
             return;
           }
 
-          button.disabled = true;
+          button.disabled =
+            true;
 
-          selectedOrderWords.push({
-            ...item,
-            button
-          });
 
-          renderOrder();
-        }
+          selectedOrderWords.push(
+            {
+              ...item,
+              button
+            }
+          );
+
+
+          renderNormalOrder();
+        };
+
+
+      bank.appendChild(
+        button
       );
+    }
+  );
 
-      bank.appendChild(button);
-    });
 
-  renderOrder();
+  renderNormalOrder();
 }
 
 
-function renderOrder() {
+function renderNormalOrder() {
 
   const area =
-    document.getElementById("normalOrderAnswer");
+    document.getElementById(
+      "normalOrderAnswer"
+    );
 
-  area.innerHTML = "";
 
-  if (!selectedOrderWords.length) {
+  area.innerHTML =
+    "";
+
+
+  if (
+    !selectedOrderWords.length
+  ) {
 
     area.textContent =
       "ここに答えが並びます";
@@ -2004,81 +2840,127 @@ function renderOrder() {
     return;
   }
 
+
   selectedOrderWords
-    .forEach(item => {
+    .forEach(
+      item => {
 
-      const span =
-        document.createElement("span");
+        const span =
+          document.createElement(
+            "span"
+          );
 
-      span.className =
-        "selected-chip";
+        span.className =
+          "selected-chip";
 
-      span.textContent =
-        item.word;
+        span.textContent =
+          item.word;
 
-      area.appendChild(span);
-    });
+        area.appendChild(
+          span
+        );
+      }
+    );
 }
 
 
 document
-  .getElementById("normalOrderResetButton")
+  .getElementById(
+    "normalOrderResetButton"
+  )
   .onclick =
     () => {
 
-      if (normalLocked) {
+      if (
+        normalLocked
+      ) {
         return;
       }
 
+
       selectedOrderWords
-        .forEach(item => {
-          item.button.disabled = false;
-        });
+        .forEach(
+          item => {
 
-      selectedOrderWords = [];
+            item.button.disabled =
+              false;
+          }
+        );
 
-      renderOrder();
+
+      selectedOrderWords =
+        [];
+
+
+      renderNormalOrder();
     };
 
 
 document
-  .getElementById("normalOrderCheckButton")
+  .getElementById(
+    "normalOrderCheckButton"
+  )
   .onclick =
     () => {
 
-      if (normalLocked) {
+      if (
+        normalLocked
+      ) {
         return;
       }
 
+
       const q =
-        normalQuestions[normalIndex];
+        normalQuestions[
+          normalIndex
+        ];
+
 
       const correct =
-        phraseWords(q.en)
-          .map(normalizeEnglish)
-          .join(" ");
+        normalPhraseWords(
+          q.en
+        )
+        .map(
+          normalizeEnglish
+        )
+        .join(" ");
+
 
       const answer =
         selectedOrderWords
-          .map(item =>
-            normalizeEnglish(item.word)
-          )
-          .join(" ");
+        .map(
+          item =>
+            normalizeEnglish(
+              item.word
+            )
+        )
+        .join(" ");
+
 
       if (!answer) {
         return;
       }
 
-      normalLocked = true;
+
+      normalLocked =
+        true;
+
 
       document
-        .querySelectorAll("#normalWordBank button")
+        .querySelectorAll(
+          "#normalWordBank button"
+        )
         .forEach(
           button =>
-            button.disabled = true
+            button.disabled =
+              true
         );
 
-      if (answer === correct) {
+
+      if (
+        answer ===
+        correct
+      ) {
 
         normalScore++;
 
@@ -2089,13 +2971,19 @@ document
 
       } else {
 
-        normalMistakes.push({
-          ...q,
-          userAnswer:
-            selectedOrderWords
-              .map(item => item.word)
-              .join(" ")
-        });
+        normalMistakes.push(
+          {
+            ...q,
+            userAnswer:
+              selectedOrderWords
+                .map(
+                  item =>
+                    item.word
+                )
+                .join(" ")
+          }
+        );
+
 
         normalFeedback(
           false,
@@ -2103,14 +2991,21 @@ document
         );
       }
 
+
       document
-        .getElementById("normalNextButton")
-        .classList.remove("hidden");
+        .getElementById(
+          "normalNextButton"
+        )
+        .classList.remove(
+          "hidden"
+        );
     };
 
 
 document
-  .getElementById("normalNextButton")
+  .getElementById(
+    "normalNextButton"
+  )
   .onclick =
     () => {
 
@@ -2136,7 +3031,8 @@ function finishNormal() {
     normalQuestions.length;
 
   const wrong =
-    total - normalScore;
+    total -
+    normalScore;
 
   const rate =
     total
@@ -2147,28 +3043,44 @@ function finishNormal() {
         )
       : 0;
 
+
   document
-    .getElementById("normalFinalScore")
+    .getElementById(
+      "normalFinalScore"
+    )
     .textContent =
       `${normalScore} / ${total}`;
 
+
   document
-    .getElementById("normalCorrectStat")
+    .getElementById(
+      "normalCorrectStat"
+    )
     .textContent =
       normalScore;
 
+
   document
-    .getElementById("normalWrongStat")
+    .getElementById(
+      "normalWrongStat"
+    )
     .textContent =
       wrong;
 
-  document
-    .getElementById("normalRateStat")
-    .textContent =
-      rate + "%";
 
   document
-    .getElementById("normalResultMessage")
+    .getElementById(
+      "normalRateStat"
+    )
+    .textContent =
+      rate +
+      "%";
+
+
+  document
+    .getElementById(
+      "normalResultMessage"
+    )
     .textContent =
       rate === 100
         ? "🎉 Perfect! 全問正解！"
@@ -2176,49 +3088,80 @@ function finishNormal() {
           ? "👏 Great! よくできました！"
           : "📚 間違えた問題を復習しましょう。";
 
-  const review =
-    document.getElementById("normalReview");
 
-  review.innerHTML = "";
+  const review =
+    document.getElementById(
+      "normalReview"
+    );
+
+
+  review.innerHTML =
+    "";
+
 
   normalMistakes
-    .forEach(item => {
+    .forEach(
+      item => {
 
-      const div =
-        document.createElement("div");
+        const div =
+          document.createElement(
+            "div"
+          );
 
-      div.className =
-        "review";
+        div.className =
+          "review";
 
-      div.innerHTML =
-        `<strong>${escapeHtml(item.en)}</strong><br>` +
-        `${escapeHtml(item.ja)}<br>` +
-        `<span class="small">あなたの答え：${escapeHtml(item.userAnswer)}</span>`;
 
-      review.appendChild(div);
-    });
+        div.innerHTML =
+          `<strong>${escapeHtml(item.en)}</strong><br>` +
+          `${escapeHtml(item.ja)}<br>` +
+          `<span class="small">あなたの答え：${escapeHtml(item.userAnswer)}</span>`;
+
+
+        review.appendChild(
+          div
+        );
+      }
+    );
+
 
   const reviewButton =
-    document.getElementById("normalReviewMistakesButton");
+    document.getElementById(
+      "normalReviewMistakesButton"
+    );
 
-  if (normalMistakes.length) {
 
-    reviewButton.classList.remove("hidden");
+  if (
+    normalMistakes.length
+  ) {
+
+    reviewButton
+      .classList.remove(
+        "hidden"
+      );
 
   } else {
 
-    reviewButton.classList.add("hidden");
+    reviewButton
+      .classList.add(
+        "hidden"
+      );
 
     review.textContent =
       "間違えた問題はありません！";
   }
 
-  showScreen("normalResult");
+
+  showScreen(
+    "normalResult"
+  );
 }
 
 
 document
-  .getElementById("normalReviewMistakesButton")
+  .getElementById(
+    "normalReviewMistakesButton"
+  )
   .onclick =
     () => {
 
@@ -2226,34 +3169,48 @@ document
         shuffle(
           normalMistakes.map(
             item => ({
-              section: item.section,
-              type: item.type,
-              en: item.en,
-              ja: item.ja,
-              direction: item.direction
+              section:
+                item.section,
+              type:
+                item.type,
+              en:
+                item.en,
+              ja:
+                item.ja,
+              direction:
+                item.direction
             })
           )
         );
+
 
       normalIndex = 0;
       normalScore = 0;
       normalMistakes = [];
 
-      showScreen("normalQuiz");
+
+      showScreen(
+        "normalQuiz"
+      );
 
       showNormalQuestion();
     };
 
 
 document
-  .getElementById("normalRestartButton")
+  .getElementById(
+    "normalRestartButton"
+  )
   .onclick =
-    () => showScreen("normalSetup");
+    () =>
+      showScreen(
+        "normalSetup"
+      );
 
 
-/* =========================
-タイムチャレンジ
-========================= */
+/* =========================================================
+   チャレンジ設定
+========================================================= */
 
 const SET_SIZE = 5;
 
@@ -2261,31 +3218,110 @@ const POINT_MEANING = 1;
 const POINT_PHRASE = 3;
 const POINT_SPELL = 5;
 
-let challengeDurationMinutes = 2;
+const WRONG_PENALTY = 1;
 
-let challengeSections = [
-  1, 2, 3, 4
-];
 
-let challengeEndAt = 0;
-let challengePoints = 0;
-let challengeCorrect = 0;
-let challengeAnswered = 0;
+let challengeDurationMinutes =
+  2;
 
-let challengeTimerId = null;
-let challengeLocked = false;
+let challengeSections =
+  [1,2,3,4];
 
-let batchMode = null;
-let batchQuestions = [];
-let batchIndex = 0;
+let challengeClassCode =
+  "";
 
-let currentChallengeQuestion = null;
+let challengeEndAt =
+  0;
 
-const used = {
-  meaning: new Set(),
-  phrase: new Set(),
-  spell: new Set()
-};
+let challengePoints =
+  0;
+
+let challengeCorrect =
+  0;
+
+let challengeAnswered =
+  0;
+
+let challengeTimerId =
+  null;
+
+let challengeLocked =
+  false;
+
+let batchMode =
+  null;
+
+let batchQuestions =
+  [];
+
+let batchIndex =
+  0;
+
+let currentChallengeQuestion =
+  null;
+
+let currentBatchCorrect =
+  0;
+
+
+/* ミッション計測 */
+
+let challengeModeStats =
+  {
+    meaning:{
+      answered:0,
+      correct:0
+    },
+
+    phrase:{
+      answered:0,
+      correct:0
+    },
+
+    spell:{
+      answered:0,
+      correct:0
+    }
+  };
+
+
+let challengeSetsStarted =
+  {
+    meaning:0,
+    phrase:0,
+    spell:0
+  };
+
+
+let currentSpellStreak =
+  0;
+
+let maxSpellStreak =
+  0;
+
+let maxPhraseSetCorrect =
+  0;
+
+
+/* 熟語並べ替え */
+
+let challengeOrderSelected =
+  [];
+
+
+/* 同じ問題の連続を減らす */
+
+const used =
+  {
+    meaning:
+      new Set(),
+
+    phrase:
+      new Set(),
+
+    spell:
+      new Set()
+  };
 
 
 function getSelectedDuration() {
@@ -2296,7 +3332,9 @@ function getSelectedDuration() {
     );
 
   return selected
-    ? Number(selected.value)
+    ? Number(
+        selected.value
+      )
     : 2;
 }
 
@@ -2310,10 +3348,13 @@ function getSelectedChallengeSections() {
   ]
   .map(
     element =>
-      Number(element.value)
+      Number(
+        element.value
+      )
   )
   .sort(
-    (a, b) => a - b
+    (a,b) =>
+      a-b
   );
 }
 
@@ -2323,14 +3364,16 @@ function getSectionsKey() {
   return challengeSections
     .map(
       section =>
-        "s" + section
+        "s" +
+        section
     )
     .join("-");
 }
 
 
 function formatSections(
-  sections = challengeSections
+  sections =
+    challengeSections
 ) {
 
   return sections
@@ -2342,10 +3385,17 @@ function formatSections(
 }
 
 
-function getChallengeDayId() {
+/*
+ランキング単位：
+日付 × クラス × 時間 × Section
+*/
+
+function getChallengeGroupId() {
 
   return (
     getJstDateKey() +
+    "_" +
+    challengeClassCode +
     "_" +
     challengeDurationMinutes +
     "min_" +
@@ -2359,14 +3409,16 @@ function getChallengeRef() {
   return doc(
     db,
     "challengeDays",
-    getChallengeDayId(),
+    getChallengeGroupId(),
     "participants",
     currentUser.uid
   );
 }
 
 
-function itemKey(item) {
+function itemKey(
+  item
+) {
 
   return (
     item.section +
@@ -2395,30 +3447,45 @@ function createQuestionSet(
   count
 ) {
 
-  if (!pool.length) {
+  if (
+    !pool.length
+  ) {
+
     return [];
   }
 
-  const result = [];
 
-  let guard = 0;
+  const result =
+    [];
+
+  let guard =
+    0;
+
 
   while (
-    result.length < count &&
-    guard < 100
+    result.length <
+    count &&
+    guard <
+    100
   ) {
 
     guard++;
+
 
     let available =
       pool.filter(
         item =>
           !usedSet.has(
-            itemKey(item)
+            itemKey(
+              item
+            )
           )
       );
 
-    if (!available.length) {
+
+    if (
+      !available.length
+    ) {
 
       usedSet.clear();
 
@@ -2426,64 +3493,272 @@ function createQuestionSet(
         [...pool];
     }
 
+
     let candidates =
-      shuffle(available);
+      shuffle(
+        available
+      );
+
 
     if (
       result.length &&
-      candidates.length > 1
+      candidates.length >
+      1
     ) {
 
       const previousKey =
         itemKey(
           result[
-            result.length - 1
+            result.length -
+            1
           ]
         );
 
-      candidates =
-        candidates.sort(
-          (a, b) => {
 
-            if (
-              itemKey(a) ===
-              previousKey
-            ) {
-              return 1;
-            }
+      candidates.sort(
+        (a,b) => {
 
-            if (
-              itemKey(b) ===
-              previousKey
-            ) {
-              return -1;
-            }
-
-            return 0;
+          if (
+            itemKey(a) ===
+            previousKey
+          ) {
+            return 1;
           }
-        );
+
+          if (
+            itemKey(b) ===
+            previousKey
+          ) {
+            return -1;
+          }
+
+          return 0;
+        }
+      );
     }
+
 
     const selected =
       candidates[0];
 
-    if (!selected) {
+
+    if (
+      !selected
+    ) {
+
       break;
     }
 
-    result.push(selected);
+
+    result.push(
+      selected
+    );
+
 
     usedSet.add(
-      itemKey(selected)
+      itemKey(
+        selected
+      )
     );
   }
+
 
   return result;
 }
 
 
+/* =========================================================
+   ミッション
+========================================================= */
+
+const MISSIONS = [
+
+{
+  id:"spell2",
+
+  text:
+    "5点問題を2問以上正解せよ！",
+
+  check:
+    stats =>
+      stats.modeStats.spell.correct >=
+      2
+},
+
+{
+  id:"phrase3",
+
+  text:
+    "3点問題を3問以上正解せよ！",
+
+  check:
+    stats =>
+      stats.modeStats.phrase.correct >=
+      3
+},
+
+{
+  id:"allModes",
+
+  text:
+    "1点・3点・5点問題にすべて挑戦せよ！",
+
+  check:
+    stats =>
+      stats.setsStarted.meaning > 0 &&
+      stats.setsStarted.phrase > 0 &&
+      stats.setsStarted.spell > 0
+},
+
+{
+  id:"correct8",
+
+  text:
+    "合計8問以上正解せよ！",
+
+  check:
+    stats =>
+      stats.correct >=
+      8
+},
+
+{
+  id:"accuracy80",
+
+  text:
+    "5問以上答えて、正答率80％以上を達成せよ！",
+
+  check:
+    stats =>
+      stats.answered >= 5 &&
+      (
+        stats.correct /
+        stats.answered
+      ) >= .8
+},
+
+{
+  id:"spellStreak3",
+
+  text:
+    "5点問題を3問連続で正解せよ！",
+
+  check:
+    stats =>
+      stats.maxSpellStreak >=
+      3
+},
+
+{
+  id:"phraseSet4",
+
+  text:
+    "3点問題の1セットで4問以上正解せよ！",
+
+  check:
+    stats =>
+      stats.maxPhraseSetCorrect >=
+      4
+},
+
+{
+  id:"allModesCorrect",
+
+  text:
+    "1点・3点・5点問題ですべて1問以上正解せよ！",
+
+  check:
+    stats =>
+      stats.modeStats.meaning.correct > 0 &&
+      stats.modeStats.phrase.correct > 0 &&
+      stats.modeStats.spell.correct > 0
+}
+
+];
+
+
+/*
+日付・クラス・時間・Sectionが同じなら
+全員同じミッションになる。
+*/
+
+function getMission() {
+
+  const seed =
+    getChallengeGroupId() +
+    "|lesson3mission";
+
+  const index =
+    hashString(
+      seed
+    ) %
+    MISSIONS.length;
+
+  return MISSIONS[
+    index
+  ];
+}
+
+
+function getMissionById(
+  id
+) {
+
+  return (
+    MISSIONS.find(
+      mission =>
+        mission.id ===
+        id
+    ) ||
+    getMission()
+  );
+}
+
+
+function getCurrentChallengeStats() {
+
+  return {
+    points:
+      challengePoints,
+
+    correct:
+      challengeCorrect,
+
+    answered:
+      challengeAnswered,
+
+    modeStats:
+      challengeModeStats,
+
+    setsStarted:
+      challengeSetsStarted,
+
+    maxSpellStreak:
+      maxSpellStreak,
+
+    maxPhraseSetCorrect:
+      maxPhraseSetCorrect
+  };
+}
+
+
+function isMissionAchieved() {
+
+  return getMission()
+    .check(
+      getCurrentChallengeStats()
+    );
+}
+
+
+/* =========================================================
+   チャレンジ開始
+========================================================= */
+
 document
-  .getElementById("startChallengeButton")
+  .getElementById(
+    "startChallengeButton"
+  )
   .onclick =
     startChallenge;
 
@@ -2491,43 +3766,71 @@ document
 async function startChallenge() {
 
   const error =
-    document.getElementById("challengeSetupError");
+    document.getElementById(
+      "challengeSetupError"
+    );
 
-  error.classList.add("hidden");
+
+  error.classList.add(
+    "hidden"
+  );
+
+
+  const info =
+    requireNicknameAndClass(
+      "challengeSetupError"
+    );
+
 
   if (
-    !requireNickname(
-      "challengeSetupError"
-    )
+    !info
   ) {
+
     return;
   }
+
+
+  challengeClassCode =
+    info.classCode;
+
 
   challengeSections =
     getSelectedChallengeSections();
 
-  if (!challengeSections.length) {
+
+  if (
+    !challengeSections.length
+  ) {
 
     error.textContent =
       "Sectionを1つ以上選んでください。";
 
-    error.classList.remove("hidden");
+    error.classList.remove(
+      "hidden"
+    );
 
     return;
   }
 
-  if (!currentUser) {
+
+  if (
+    !currentUser
+  ) {
 
     error.textContent =
       "Firebaseへの接続を待ってから、もう一度押してください。";
 
-    error.classList.remove("hidden");
+    error.classList.remove(
+      "hidden"
+    );
 
     return;
   }
 
+
   challengeDurationMinutes =
     getSelectedDuration();
+
 
   localStorage.setItem(
     "lesson3ChallengeDuration",
@@ -2536,6 +3839,7 @@ async function startChallenge() {
     )
   );
 
+
   localStorage.setItem(
     "lesson3ChallengeSections",
     JSON.stringify(
@@ -2543,18 +3847,26 @@ async function startChallenge() {
     )
   );
 
+
   const ref =
     getChallengeRef();
+
 
   try {
 
     const existing =
-      await getDoc(ref);
+      await getDoc(
+        ref
+      );
 
-    if (existing.exists()) {
+
+    if (
+      existing.exists()
+    ) {
 
       const data =
         existing.data();
+
 
       if (
         data.status ===
@@ -2567,6 +3879,7 @@ async function startChallenge() {
 
         return;
       }
+
 
       if (
         data.status ===
@@ -2581,8 +3894,10 @@ async function startChallenge() {
       }
     }
 
+
     const startMs =
       Date.now();
+
 
     const endAt =
       startMs +
@@ -2590,14 +3905,23 @@ async function startChallenge() {
       60 *
       1000;
 
+
+    const mission =
+      getMission();
+
+
     await setDoc(
       ref,
       {
+
         uid:
           currentUser.uid,
 
         nickname:
-          getNickname(),
+          info.nickname,
+
+        classCode:
+          challengeClassCode,
 
         dateKey:
           getJstDateKey(),
@@ -2611,12 +3935,44 @@ async function startChallenge() {
         sectionsKey:
           getSectionsKey(),
 
+        missionId:
+          mission.id,
+
         status:
           "started",
 
-        points: 0,
-        correct: 0,
-        answered: 0,
+        points:0,
+        correct:0,
+        answered:0,
+
+        modeStats:{
+          meaning:{
+            answered:0,
+            correct:0
+          },
+
+          phrase:{
+            answered:0,
+            correct:0
+          },
+
+          spell:{
+            answered:0,
+            correct:0
+          }
+        },
+
+        setsStarted:{
+          meaning:0,
+          phrase:0,
+          spell:0
+        },
+
+        maxSpellStreak:0,
+
+        maxPhraseSetCorrect:0,
+
+        missionAchieved:false,
 
         startMs,
         endAt,
@@ -2624,32 +3980,85 @@ async function startChallenge() {
         startedAt:
           serverTimestamp(),
 
-        finishedAt:
-          null
+        finishedAt:null
       }
     );
 
-    challengePoints = 0;
-    challengeCorrect = 0;
-    challengeAnswered = 0;
-    challengeEndAt = endAt;
+
+    challengePoints =
+      0;
+
+    challengeCorrect =
+      0;
+
+    challengeAnswered =
+      0;
+
+    challengeEndAt =
+      endAt;
+
+
+    challengeModeStats =
+      {
+        meaning:{
+          answered:0,
+          correct:0
+        },
+
+        phrase:{
+          answered:0,
+          correct:0
+        },
+
+        spell:{
+          answered:0,
+          correct:0
+        }
+      };
+
+
+    challengeSetsStarted =
+      {
+        meaning:0,
+        phrase:0,
+        spell:0
+      };
+
+
+    currentSpellStreak =
+      0;
+
+    maxSpellStreak =
+      0;
+
+    maxPhraseSetCorrect =
+      0;
+
 
     Object
-      .values(used)
+      .values(
+        used
+      )
       .forEach(
-        set => set.clear()
+        set =>
+          set.clear()
       );
+
 
     enterChallenge();
 
-  } catch (errorObject) {
+  } catch (
+    errorObject
+  ) {
 
     console.error(
       errorObject
     );
 
+
     error.textContent =
       "チャレンジを開始できませんでした。Firebaseの設定を確認してください。";
+
 
     error.classList.remove(
       "hidden"
@@ -2658,14 +4067,29 @@ async function startChallenge() {
 }
 
 
+/* =========================================================
+   再開
+========================================================= */
+
 async function resumeChallenge(
   data
 ) {
 
   challengeDurationMinutes =
     Number(
-      data.durationMinutes || 2
+      data.durationMinutes ||
+      2
     );
+
+
+  challengeClassCode =
+    data.classCode ||
+    getClassCode(
+      data.nickname ||
+      getNickname()
+    ) ||
+    "A";
+
 
   challengeSections =
     Array.isArray(
@@ -2673,28 +4097,87 @@ async function resumeChallenge(
     )
       ? data.selectedSections
           .map(Number)
-          .sort((a, b) => a - b)
+          .sort(
+            (a,b) =>
+              a-b
+          )
       : [1,2,3,4];
+
 
   challengePoints =
     Number(
-      data.points || 0
+      data.points ||
+      0
     );
+
 
   challengeCorrect =
     Number(
-      data.correct || 0
+      data.correct ||
+      0
     );
+
 
   challengeAnswered =
     Number(
-      data.answered || 0
+      data.answered ||
+      0
     );
+
 
   challengeEndAt =
     Number(
-      data.endAt || 0
+      data.endAt ||
+      0
     );
+
+
+  challengeModeStats =
+    data.modeStats ||
+    {
+      meaning:{
+        answered:0,
+        correct:0
+      },
+
+      phrase:{
+        answered:0,
+        correct:0
+      },
+
+      spell:{
+        answered:0,
+        correct:0
+      }
+    };
+
+
+  challengeSetsStarted =
+    data.setsStarted ||
+    {
+      meaning:0,
+      phrase:0,
+      spell:0
+    };
+
+
+  maxSpellStreak =
+    Number(
+      data.maxSpellStreak ||
+      0
+    );
+
+
+  maxPhraseSetCorrect =
+    Number(
+      data.maxPhraseSetCorrect ||
+      0
+    );
+
+
+  currentSpellStreak =
+    0;
+
 
   if (
     Date.now() >=
@@ -2706,33 +4189,65 @@ async function resumeChallenge(
     return;
   }
 
+
   enterChallenge();
 }
 
 
+/* =========================================================
+   チャレンジ画面
+========================================================= */
+
 function enterChallenge() {
 
-  batchQuestions = [];
-  batchIndex = 0;
-  batchMode = null;
+  batchQuestions =
+    [];
+
+  batchIndex =
+    0;
+
+  batchMode =
+    null;
+
 
   showScreen(
     "challengeQuiz"
   );
 
+
   document
-    .getElementById("challengeRangeDisplay")
+    .getElementById(
+      "challengeRangeDisplay"
+    )
     .textContent =
-      "出題範囲：" +
-      formatSections();
+      `${challengeClassCode}組 ｜ ${challengeDurationMinutes}分 ｜ ${formatSections()}`;
+
 
   document
-    .getElementById("challengeQuestionArea")
-    .classList.add("hidden");
+    .getElementById(
+      "challengeMissionText"
+    )
+    .textContent =
+      getMission().text;
+
 
   document
-    .getElementById("challengeChooser")
-    .classList.remove("hidden");
+    .getElementById(
+      "challengeQuestionArea"
+    )
+    .classList.add(
+      "hidden"
+    );
+
+
+  document
+    .getElementById(
+      "challengeChooser"
+    )
+    .classList.remove(
+      "hidden"
+    );
+
 
   updateChallengeStats();
 
@@ -2742,14 +4257,18 @@ function enterChallenge() {
 
 function startTimer() {
 
-  if (challengeTimerId) {
+  if (
+    challengeTimerId
+  ) {
 
     clearInterval(
       challengeTimerId
     );
   }
 
+
   updateTimer();
+
 
   challengeTimerId =
     setInterval(
@@ -2768,38 +4287,67 @@ function updateTimer() {
       Date.now()
     );
 
+
   const totalSeconds =
     Math.ceil(
-      remaining / 1000
+      remaining /
+      1000
     );
+
 
   const minutes =
     Math.floor(
-      totalSeconds / 60
+      totalSeconds /
+      60
     );
+
 
   const seconds =
-    totalSeconds % 60;
+    totalSeconds %
+    60;
+
 
   document
-    .getElementById("challengeTimer")
+    .getElementById(
+      "challengeTimer"
+    )
     .textContent =
-      String(minutes)
-        .padStart(2, "0") +
+      String(
+        minutes
+      )
+      .padStart(
+        2,
+        "0"
+      ) +
       ":" +
-      String(seconds)
-        .padStart(2, "0");
+      String(
+        seconds
+      )
+      .padStart(
+        2,
+        "0"
+      );
+
 
   document
-    .getElementById("timerBox")
+    .getElementById(
+      "timerBox"
+    )
     .classList.toggle(
       "timer-danger",
-      remaining <= 20000
+      remaining <=
+      20000
     );
 
-  if (remaining <= 0) {
 
-    if (challengeTimerId) {
+  if (
+    remaining <=
+    0
+  ) {
+
+    if (
+      challengeTimerId
+    ) {
 
       clearInterval(
         challengeTimerId
@@ -2817,45 +4365,68 @@ function updateTimer() {
 function updateChallengeStats() {
 
   document
-    .getElementById("challengePoints")
+    .getElementById(
+      "challengePoints"
+    )
     .textContent =
       `${challengePoints} pt`;
 
+
   document
-    .getElementById("challengeCorrectCount")
+    .getElementById(
+      "challengeCorrectCount"
+    )
     .textContent =
       challengeCorrect;
 
+
   document
-    .getElementById("challengeAnsweredCount")
+    .getElementById(
+      "challengeAnsweredCount"
+    )
     .textContent =
       challengeAnswered;
 }
 
 
-document
-  .getElementById("challengeOneButton")
-  .onclick =
-    () => beginFiveQuestionSet(
-      "meaning"
-    );
+/* =========================================================
+   5問セット選択
+========================================================= */
 
 document
-  .getElementById("challengeThreeButton")
+  .getElementById(
+    "challengeOneButton"
+  )
   .onclick =
-    () => beginFiveQuestionSet(
-      "phrase"
-    );
+    () =>
+      beginFiveQuestionSet(
+        "meaning"
+      );
+
 
 document
-  .getElementById("challengeFiveButton")
+  .getElementById(
+    "challengeThreeButton"
+  )
   .onclick =
-    () => beginFiveQuestionSet(
-      "spell"
-    );
+    () =>
+      beginFiveQuestionSet(
+        "phrase"
+      );
 
 
-function beginFiveQuestionSet(
+document
+  .getElementById(
+    "challengeFiveButton"
+  )
+  .onclick =
+    () =>
+      beginFiveQuestionSet(
+        "spell"
+      );
+
+
+async function beginFiveQuestionSet(
   mode
 ) {
 
@@ -2869,18 +4440,29 @@ function beginFiveQuestionSet(
     return;
   }
 
+
   const challengePool =
     getChallengePool();
 
-  let pool = [];
 
-  if (mode === "meaning") {
+  let pool =
+    [];
+
+
+  if (
+    mode ===
+    "meaning"
+  ) {
 
     pool =
       challengePool;
   }
 
-  if (mode === "phrase") {
+
+  if (
+    mode ===
+    "phrase"
+  ) {
 
     pool =
       challengePool.filter(
@@ -2890,7 +4472,11 @@ function beginFiveQuestionSet(
       );
   }
 
-  if (mode === "spell") {
+
+  if (
+    mode ===
+    "spell"
+  ) {
 
     pool =
       challengePool.filter(
@@ -2900,7 +4486,10 @@ function beginFiveQuestionSet(
       );
   }
 
-  if (!pool.length) {
+
+  if (
+    !pool.length
+  ) {
 
     alert(
       "選択したSectionには、この種類の問題がありません。"
@@ -2909,36 +4498,60 @@ function beginFiveQuestionSet(
     return;
   }
 
-  batchMode = mode;
-  batchIndex = 0;
+
+  batchMode =
+    mode;
+
+  batchIndex =
+    0;
+
+  currentBatchCorrect =
+    0;
+
+
+  challengeSetsStarted[
+    mode
+  ]++;
+
 
   batchQuestions =
     createQuestionSet(
       pool,
-      used[mode],
+      used[
+        mode
+      ],
       SET_SIZE
     );
 
-  if (!batchQuestions.length) {
 
-    alert(
-      "問題を作成できませんでした。"
+  await saveChallengeProgress();
+
+
+  document
+    .getElementById(
+      "challengeChooser"
+    )
+    .classList.add(
+      "hidden"
     );
 
-    return;
-  }
 
   document
-    .getElementById("challengeChooser")
-    .classList.add("hidden");
+    .getElementById(
+      "challengeQuestionArea"
+    )
+    .classList.remove(
+      "hidden"
+    );
 
-  document
-    .getElementById("challengeQuestionArea")
-    .classList.remove("hidden");
 
   showChallengeBatchQuestion();
 }
 
+
+/* =========================================================
+   チャレンジ問題表示
+========================================================= */
 
 function showChallengeBatchQuestion() {
 
@@ -2952,129 +4565,146 @@ function showChallengeBatchQuestion() {
     return;
   }
 
+
   currentChallengeQuestion =
     batchQuestions[
       batchIndex
     ];
 
-  if (!currentChallengeQuestion) {
+
+  if (
+    !currentChallengeQuestion
+  ) {
 
     finishCurrentBatch();
 
     return;
   }
 
+
   const q =
     currentChallengeQuestion;
 
-  challengeLocked = false;
+
+  challengeLocked =
+    false;
+
 
   document
-    .getElementById("challengeSetStatus")
+    .getElementById(
+      "challengeSetStatus"
+    )
     .textContent =
       `このセット：${batchIndex + 1} / ${batchQuestions.length}問`;
 
+
   document
-    .getElementById("challengeSectionBadge")
+    .getElementById(
+      "challengeSectionBadge"
+    )
     .textContent =
       `Section ${q.section}`;
 
-  document
-    .getElementById("challengeChoices")
-    .innerHTML = "";
 
   document
-    .getElementById("challengeSpellArea")
-    .classList.add("hidden");
+    .getElementById(
+      "challengeChoices"
+    )
+    .innerHTML =
+      "";
+
+
+  document
+    .getElementById(
+      "challengeChoices"
+    )
+    .classList.add(
+      "hidden"
+    );
+
+
+  document
+    .getElementById(
+      "challengeOrderArea"
+    )
+    .classList.add(
+      "hidden"
+    );
+
+
+  document
+    .getElementById(
+      "challengeSpellArea"
+    )
+    .classList.add(
+      "hidden"
+    );
+
 
   const feedback =
-    document.getElementById("challengeFeedback");
+    document.getElementById(
+      "challengeFeedback"
+    );
 
-  feedback.textContent = "";
-  feedback.className = "feedback";
+
+  feedback.textContent =
+    "";
+
+  feedback.className =
+    "feedback";
+
 
   document
-    .getElementById("challengeNextButton")
-    .classList.add("hidden");
+    .getElementById(
+      "challengeNextButton"
+    )
+    .classList.add(
+      "hidden"
+    );
 
 
-  if (batchMode === "meaning") {
+  /* 1点 */
+
+  if (
+    batchMode ===
+    "meaning"
+  ) {
 
     document
-      .getElementById("challengeTypeLabel")
+      .getElementById(
+        "challengeTypeLabel"
+      )
       .textContent =
-        "1 pt × 5問セット";
+        "1 pt問題";
+
 
     document
-      .getElementById("challengeInstruction")
+      .getElementById(
+        "challengeInstruction"
+      )
       .textContent =
         "次の英語の意味を選んでください。";
 
+
     document
-      .getElementById("challengeQuestion")
+      .getElementById(
+        "challengeQuestion"
+      )
       .textContent =
         q.en;
+
 
     const allPool =
       getChallengePool();
 
+
     let distractorPool =
       allPool.filter(
         item =>
-          item.ja !== q.ja
+          item.ja !==
+          q.ja
       );
 
-    if (distractorPool.length < 3) {
-
-      distractorPool =
-        DATA.filter(
-          item =>
-            item.ja !== q.ja
-        );
-    }
-
-    const distractors =
-      shuffle(distractorPool)
-        .slice(0, 3)
-        .map(
-          item => item.ja
-        );
-
-    buildChoices(
-      shuffle([
-        q.ja,
-        ...distractors
-      ]),
-      q.ja,
-      POINT_MEANING
-    );
-  }
-
-
-  if (batchMode === "phrase") {
-
-    document
-      .getElementById("challengeTypeLabel")
-      .textContent =
-        "3 pt × 5問セット";
-
-    document
-      .getElementById("challengeInstruction")
-      .textContent =
-        "次の日本語に合う英熟語を選んでください。";
-
-    document
-      .getElementById("challengeQuestion")
-      .textContent =
-        q.ja;
-
-    let distractorPool =
-      getChallengePool()
-        .filter(
-          item =>
-            item.type === "phrase" &&
-            item.en !== q.en
-        );
 
     if (
       distractorPool.length <
@@ -3084,181 +4714,603 @@ function showChallengeBatchQuestion() {
       distractorPool =
         DATA.filter(
           item =>
-            item.type === "phrase" &&
-            item.en !== q.en
+            item.ja !==
+            q.ja
         );
     }
+
 
     const distractors =
       shuffle(
         distractorPool
       )
-      .slice(0, 3)
+      .slice(
+        0,
+        3
+      )
       .map(
-        item => item.en
+        item =>
+          item.ja
       );
 
-    buildChoices(
-      shuffle([
-        q.en,
-        ...distractors
-      ]),
-      q.en,
-      POINT_PHRASE
+
+    document
+      .getElementById(
+        "challengeChoices"
+      )
+      .classList.remove(
+        "hidden"
+      );
+
+
+    buildChallengeChoices(
+      shuffle(
+        [
+          q.ja,
+          ...distractors
+        ]
+      ),
+      q.ja,
+      POINT_MEANING
     );
   }
 
 
-  if (batchMode === "spell") {
+  /* 3点 */
+
+  if (
+    batchMode ===
+    "phrase"
+  ) {
 
     document
-      .getElementById("challengeTypeLabel")
+      .getElementById(
+        "challengeTypeLabel"
+      )
       .textContent =
-        "5 pt × 5問セット";
+        "3 pt問題";
+
 
     document
-      .getElementById("challengeInstruction")
+      .getElementById(
+        "challengeInstruction"
+      )
       .textContent =
-        "次の日本語を英単語にしてください。";
+        "次の日本語に合う英熟語を、正しい順番に並べてください。";
+
 
     document
-      .getElementById("challengeQuestion")
+      .getElementById(
+        "challengeQuestion"
+      )
       .textContent =
         q.ja;
 
-    const input =
-      document.getElementById("challengeSpellInput");
-
-    input.value = "";
-    input.disabled = false;
 
     document
-      .getElementById("challengeSpellArea")
-      .classList.remove("hidden");
+      .getElementById(
+        "challengeOrderArea"
+      )
+      .classList.remove(
+        "hidden"
+      );
+
+
+    setupChallengeOrder(
+      q
+    );
+  }
+
+
+  /* 5点 */
+
+  if (
+    batchMode ===
+    "spell"
+  ) {
+
+    document
+      .getElementById(
+        "challengeTypeLabel"
+      )
+      .textContent =
+        "5 pt問題";
+
+
+    document
+      .getElementById(
+        "challengeInstruction"
+      )
+      .textContent =
+        "次の日本語を英単語にしてください。";
+
+
+    document
+      .getElementById(
+        "challengeQuestion"
+      )
+      .textContent =
+        q.ja;
+
+
+    const input =
+      document.getElementById(
+        "challengeSpellInput"
+      );
+
+
+    input.value =
+      "";
+
+    input.disabled =
+      false;
+
+
+    document
+      .getElementById(
+        "challengeSpellArea"
+      )
+      .classList.remove(
+        "hidden"
+      );
+
 
     setTimeout(
-      () => input.focus(),
+      () =>
+        input.focus(),
       50
     );
   }
 }
 
 
-function buildChoices(
+/* =========================================================
+   1点問題
+========================================================= */
+
+function buildChallengeChoices(
   answers,
   correctAnswer,
   points
 ) {
 
   const box =
-    document.getElementById("challengeChoices");
+    document.getElementById(
+      "challengeChoices"
+    );
+
 
   const uniqueAnswers =
-    [...new Set(answers)];
+    [
+      ...new Set(
+        answers
+      )
+    ];
 
-  uniqueAnswers.forEach(
-    answer => {
+
+  uniqueAnswers
+    .forEach(
+      answer => {
+
+        const button =
+          document.createElement(
+            "button"
+          );
+
+
+        button.type =
+          "button";
+
+        button.className =
+          "choice";
+
+        button.textContent =
+          answer;
+
+
+        button.onclick =
+          async () => {
+
+            if (
+              challengeLocked ||
+              Date.now() >=
+              challengeEndAt
+            ) {
+              return;
+            }
+
+
+            challengeLocked =
+              true;
+
+
+            [
+              ...box.querySelectorAll(
+                ".choice"
+              )
+            ]
+            .forEach(
+              item => {
+
+                item.disabled =
+                  true;
+
+
+                if (
+                  item.textContent ===
+                  correctAnswer
+                ) {
+
+                  item.classList.add(
+                    "correct"
+                  );
+                }
+              }
+            );
+
+
+            const correct =
+              answer ===
+              correctAnswer;
+
+
+            if (
+              !correct
+            ) {
+
+              button.classList.add(
+                "wrong"
+              );
+            }
+
+
+            await recordChallengeAnswer(
+              correct,
+              points
+            );
+
+
+            if (
+              correct
+            ) {
+
+              showChallengeFeedback(
+                true,
+                `正解！ +${points} pt`
+              );
+
+            } else {
+
+              showChallengeFeedback(
+                false,
+                `不正解 −1 pt　正解：${correctAnswer}`
+              );
+            }
+
+
+            prepareNextChallengeQuestion();
+          };
+
+
+        box.appendChild(
+          button
+        );
+      }
+    );
+}
+
+
+/* =========================================================
+   3点 熟語並べ替え
+========================================================= */
+
+/*
+チャレンジでは
+～ や ... もボタンとして並べ替える。
+入力する必要はない。
+*/
+
+function challengePhraseTokens(
+  en
+) {
+
+  return String(en)
+    .trim()
+    .split(/\s+/)
+    .filter(Boolean);
+}
+
+
+function setupChallengeOrder(
+  q
+) {
+
+  challengeOrderSelected =
+    [];
+
+
+  const bank =
+    document.getElementById(
+      "challengeWordBank"
+    );
+
+
+  bank.innerHTML =
+    "";
+
+
+  const items =
+    challengePhraseTokens(
+      q.en
+    )
+    .map(
+      (word,id) => ({
+        word,
+        id
+      })
+    );
+
+
+  shuffle(
+    items
+  )
+  .forEach(
+    item => {
 
       const button =
-        document.createElement("button");
+        document.createElement(
+          "button"
+        );
+
 
       button.type =
         "button";
 
       button.className =
-        "choice";
+        "word-chip";
 
       button.textContent =
-        answer;
+        item.word;
 
-      button.addEventListener(
-        "click",
-        async () => {
+
+      button.onclick =
+        () => {
 
           if (
             challengeLocked ||
-            Date.now() >=
-            challengeEndAt
+            button.disabled
           ) {
+
             return;
           }
 
-          challengeLocked = true;
 
-          [
-            ...box.querySelectorAll(".choice")
-          ].forEach(
-            item => {
+          button.disabled =
+            true;
 
-              item.disabled =
-                true;
 
-              if (
-                item.textContent ===
-                correctAnswer
-              ) {
-
-                item.classList.add(
-                  "correct"
-                );
-              }
+          challengeOrderSelected.push(
+            {
+              ...item,
+              button
             }
           );
 
-          challengeAnswered++;
 
-          if (
-            answer ===
-            correctAnswer
-          ) {
+          renderChallengeOrder();
+        };
 
-            challengeCorrect++;
-            challengePoints +=
-              points;
 
-            showChallengeFeedback(
-              true,
-              `正解！ +${points} pt`
-            );
-
-          } else {
-
-            button.classList.add(
-              "wrong"
-            );
-
-            showChallengeFeedback(
-              false,
-              `不正解　正解：${correctAnswer}`
-            );
-          }
-
-          updateChallengeStats();
-
-          await saveChallengeProgress();
-
-          prepareNextChallengeQuestion();
-        }
-      );
-
-      box.appendChild(
+      bank.appendChild(
         button
       );
     }
   );
+
+
+  renderChallengeOrder();
+}
+
+
+function renderChallengeOrder() {
+
+  const area =
+    document.getElementById(
+      "challengeOrderAnswer"
+    );
+
+
+  area.innerHTML =
+    "";
+
+
+  if (
+    !challengeOrderSelected.length
+  ) {
+
+    area.textContent =
+      "ここに答えが並びます";
+
+    return;
+  }
+
+
+  challengeOrderSelected
+    .forEach(
+      item => {
+
+        const span =
+          document.createElement(
+            "span"
+          );
+
+
+        span.className =
+          "selected-chip";
+
+
+        span.textContent =
+          item.word;
+
+
+        area.appendChild(
+          span
+        );
+      }
+    );
 }
 
 
 document
-  .getElementById("challengeSpellButton")
+  .getElementById(
+    "challengeOrderResetButton"
+  )
+  .onclick =
+    () => {
+
+      if (
+        challengeLocked
+      ) {
+
+        return;
+      }
+
+
+      challengeOrderSelected
+        .forEach(
+          item => {
+
+            item.button.disabled =
+              false;
+          }
+        );
+
+
+      challengeOrderSelected =
+        [];
+
+
+      renderChallengeOrder();
+    };
+
+
+document
+  .getElementById(
+    "challengeOrderCheckButton"
+  )
+  .onclick =
+    checkChallengeOrder;
+
+
+async function checkChallengeOrder() {
+
+  if (
+    challengeLocked ||
+    Date.now() >=
+    challengeEndAt
+  ) {
+
+    return;
+  }
+
+
+  if (
+    !challengeOrderSelected.length
+  ) {
+
+    return;
+  }
+
+
+  challengeLocked =
+    true;
+
+
+  document
+    .querySelectorAll(
+      "#challengeWordBank button"
+    )
+    .forEach(
+      button =>
+        button.disabled =
+          true
+    );
+
+
+  const q =
+    currentChallengeQuestion;
+
+
+  const correct =
+    normalizeEnglish(
+      challengePhraseTokens(
+        q.en
+      )
+      .join(" ")
+    );
+
+
+  const answer =
+    normalizeEnglish(
+      challengeOrderSelected
+        .map(
+          item =>
+            item.word
+        )
+        .join(" ")
+    );
+
+
+  const isCorrect =
+    answer ===
+    correct;
+
+
+  await recordChallengeAnswer(
+    isCorrect,
+    POINT_PHRASE
+  );
+
+
+  if (
+    isCorrect
+  ) {
+
+    showChallengeFeedback(
+      true,
+      `正解！ +${POINT_PHRASE} pt`
+    );
+
+  } else {
+
+    showChallengeFeedback(
+      false,
+      `不正解 −1 pt　正解：${q.en}`
+    );
+  }
+
+
+  prepareNextChallengeQuestion();
+}
+
+
+/* =========================================================
+   5点 スペル
+========================================================= */
+
+document
+  .getElementById(
+    "challengeSpellButton"
+  )
   .onclick =
     checkChallengeSpell;
 
 
 document
-  .getElementById("challengeSpellInput")
-  .addEventListener(
-    "keydown",
+  .getElementById(
+    "challengeSpellInput"
+  )
+  .onkeydown =
     event => {
 
       if (
@@ -3268,8 +5320,7 @@ document
 
         checkChallengeSpell();
       }
-    }
-  );
+    };
 
 
 async function checkChallengeSpell() {
@@ -3279,34 +5330,54 @@ async function checkChallengeSpell() {
     Date.now() >=
     challengeEndAt
   ) {
+
     return;
   }
 
+
   const input =
-    document.getElementById("challengeSpellInput");
+    document.getElementById(
+      "challengeSpellInput"
+    );
+
 
   const answer =
     input.value.trim();
 
-  if (!answer) {
+
+  if (
+    !answer
+  ) {
+
     return;
   }
 
-  challengeLocked = true;
-  input.disabled = true;
 
-  challengeAnswered++;
+  challengeLocked =
+    true;
 
-  if (
-    normalizeEnglish(answer) ===
+  input.disabled =
+    true;
+
+
+  const correct =
+    normalizeEnglish(
+      answer
+    ) ===
     normalizeEnglish(
       currentChallengeQuestion.en
-    )
-  ) {
+    );
 
-    challengeCorrect++;
-    challengePoints +=
-      POINT_SPELL;
+
+  await recordChallengeAnswer(
+    correct,
+    POINT_SPELL
+  );
+
+
+  if (
+    correct
+  ) {
 
     showChallengeFeedback(
       true,
@@ -3317,15 +5388,90 @@ async function checkChallengeSpell() {
 
     showChallengeFeedback(
       false,
-      `不正解　正解：${currentChallengeQuestion.en}`
+      `不正解 −1 pt　正解：${currentChallengeQuestion.en}`
     );
   }
 
-  updateChallengeStats();
-
-  await saveChallengeProgress();
 
   prepareNextChallengeQuestion();
+}
+
+
+/* =========================================================
+   得点・ミッション記録
+========================================================= */
+
+async function recordChallengeAnswer(
+  correct,
+  rewardPoints
+) {
+
+  challengeAnswered++;
+
+
+  challengeModeStats[
+    batchMode
+  ].answered++;
+
+
+  if (
+    correct
+  ) {
+
+    challengeCorrect++;
+
+    challengePoints +=
+      rewardPoints;
+
+
+    challengeModeStats[
+      batchMode
+    ].correct++;
+
+
+    currentBatchCorrect++;
+
+
+    if (
+      batchMode ===
+      "spell"
+    ) {
+
+      currentSpellStreak++;
+
+
+      maxSpellStreak =
+        Math.max(
+          maxSpellStreak,
+          currentSpellStreak
+        );
+    }
+
+  } else {
+
+    challengePoints =
+      Math.max(
+        0,
+        challengePoints -
+        WRONG_PENALTY
+      );
+
+
+    if (
+      batchMode ===
+      "spell"
+    ) {
+
+      currentSpellStreak =
+        0;
+    }
+  }
+
+
+  updateChallengeStats();
+
+
+  await saveChallengeProgress();
 }
 
 
@@ -3335,10 +5481,14 @@ function showChallengeFeedback(
 ) {
 
   const box =
-    document.getElementById("challengeFeedback");
+    document.getElementById(
+      "challengeFeedback"
+    );
+
 
   box.textContent =
     text;
+
 
   box.className =
     "feedback " +
@@ -3353,11 +5503,15 @@ function showChallengeFeedback(
 function prepareNextChallengeQuestion() {
 
   const button =
-    document.getElementById("challengeNextButton");
+    document.getElementById(
+      "challengeNextButton"
+    );
+
 
   if (
     batchIndex <
-    batchQuestions.length - 1
+    batchQuestions.length -
+    1
   ) {
 
     button.textContent =
@@ -3369,6 +5523,7 @@ function prepareNextChallengeQuestion() {
       "次のポイントを選ぶ";
   }
 
+
   button.classList.remove(
     "hidden"
   );
@@ -3376,9 +5531,11 @@ function prepareNextChallengeQuestion() {
 
 
 document
-  .getElementById("challengeNextButton")
+  .getElementById(
+    "challengeNextButton"
+  )
   .onclick =
-    () => {
+    async () => {
 
       if (
         Date.now() >=
@@ -3390,9 +5547,11 @@ document
         return;
       }
 
+
       if (
         batchIndex <
-        batchQuestions.length - 1
+        batchQuestions.length -
+        1
       ) {
 
         batchIndex++;
@@ -3401,38 +5560,80 @@ document
 
       } else {
 
-        finishCurrentBatch();
+        await finishCurrentBatch();
       }
     };
 
 
-function finishCurrentBatch() {
+async function finishCurrentBatch() {
 
-  batchIndex = 0;
-  batchQuestions = [];
-  batchMode = null;
+  if (
+    batchMode ===
+    "phrase"
+  ) {
+
+    maxPhraseSetCorrect =
+      Math.max(
+        maxPhraseSetCorrect,
+        currentBatchCorrect
+      );
+  }
+
+
+  currentBatchCorrect =
+    0;
+
+
+  batchIndex =
+    0;
+
+
+  batchQuestions =
+    [];
+
+
+  batchMode =
+    null;
+
+
+  await saveChallengeProgress();
+
 
   document
-    .getElementById("challengeQuestionArea")
-    .classList.add("hidden");
+    .getElementById(
+      "challengeQuestionArea"
+    )
+    .classList.add(
+      "hidden"
+    );
+
 
   document
-    .getElementById("challengeChooser")
-    .classList.remove("hidden");
+    .getElementById(
+      "challengeChooser"
+    )
+    .classList.remove(
+      "hidden"
+    );
 }
 
 
 async function saveChallengeProgress() {
 
-  if (!currentUser) {
+  if (
+    !currentUser
+  ) {
+
     return;
   }
+
 
   try {
 
     await updateDoc(
       getChallengeRef(),
       {
+
         points:
           challengePoints,
 
@@ -3440,11 +5641,28 @@ async function saveChallengeProgress() {
           challengeCorrect,
 
         answered:
-          challengeAnswered
+          challengeAnswered,
+
+        modeStats:
+          challengeModeStats,
+
+        setsStarted:
+          challengeSetsStarted,
+
+        maxSpellStreak:
+          maxSpellStreak,
+
+        maxPhraseSetCorrect:
+          maxPhraseSetCorrect,
+
+        missionAchieved:
+          isMissionAchieved()
       }
     );
 
-  } catch (error) {
+  } catch (
+    error
+  ) {
 
     console.error(
       "途中経過の保存に失敗",
@@ -3454,9 +5672,9 @@ async function saveChallengeProgress() {
 }
 
 
-/* =========================
-チャレンジ終了
-========================= */
+/* =========================================================
+   チャレンジ終了
+========================================================= */
 
 let finishing =
   false;
@@ -3464,13 +5682,21 @@ let finishing =
 
 async function finishChallenge() {
 
-  if (finishing) {
+  if (
+    finishing
+  ) {
+
     return;
   }
 
-  finishing = true;
 
-  if (challengeTimerId) {
+  finishing =
+    true;
+
+
+  if (
+    challengeTimerId
+  ) {
 
     clearInterval(
       challengeTimerId
@@ -3480,35 +5706,82 @@ async function finishChallenge() {
       null;
   }
 
+
+  /*
+  最後の熟語セットが途中で終了しても、
+  すでに4問正解していた場合などを反映。
+  */
+
+  if (
+    batchMode ===
+    "phrase"
+  ) {
+
+    maxPhraseSetCorrect =
+      Math.max(
+        maxPhraseSetCorrect,
+        currentBatchCorrect
+      );
+  }
+
+
+  const missionAchieved =
+    isMissionAchieved();
+
+
   showScreen(
     "challengeResult"
   );
 
+
   document
-    .getElementById("challengeResultDuration")
+    .getElementById(
+      "challengeResultDuration"
+    )
     .textContent =
       `${challengeDurationMinutes}分チャレンジ`;
 
+
   document
-    .getElementById("challengeResultSections")
+    .getElementById(
+      "challengeResultClass"
+    )
+    .textContent =
+      `${challengeClassCode}組`;
+
+
+  document
+    .getElementById(
+      "challengeResultSections"
+    )
     .textContent =
       "出題範囲：" +
       formatSections();
 
+
   document
-    .getElementById("challengeFinalPoints")
+    .getElementById(
+      "challengeFinalPoints"
+    )
     .textContent =
       `${challengePoints} pt`;
 
+
   document
-    .getElementById("challengeFinalCorrect")
+    .getElementById(
+      "challengeFinalCorrect"
+    )
     .textContent =
       challengeCorrect;
 
+
   document
-    .getElementById("challengeFinalAnswered")
+    .getElementById(
+      "challengeFinalAnswered"
+    )
     .textContent =
       challengeAnswered;
+
 
   const rate =
     challengeAnswered
@@ -3519,32 +5792,84 @@ async function finishChallenge() {
         )
       : 0;
 
-  document
-    .getElementById("challengeFinalRate")
-    .textContent =
-      rate + "%";
 
   document
-    .getElementById("challengeSaveStatus")
+    .getElementById(
+      "challengeFinalRate"
+    )
+    .textContent =
+      rate +
+      "%";
+
+
+  const missionResult =
+    document.getElementById(
+      "challengeMissionResult"
+    );
+
+
+  if (
+    missionAchieved
+  ) {
+
+    missionResult.className =
+      "mission-success";
+
+
+    missionResult.innerHTML =
+      `🎯 <strong>MISSION CLEAR!</strong><br>` +
+      `${escapeHtml(getMission().text)}<br>` +
+      `<span class="small">ミッション賞の候補になりました。</span>`;
+
+  } else {
+
+    missionResult.className =
+      "mission-fail";
+
+
+    missionResult.innerHTML =
+      `🎯 今日のミッション<br>` +
+      `<strong>${escapeHtml(getMission().text)}</strong><br>` +
+      `今回は未達成でした。`;
+  }
+
+
+  document
+    .getElementById(
+      "challengeSaveStatus"
+    )
     .textContent =
       "結果を保存しています…";
 
-  document
-    .getElementById("openRankingButton")
-    .classList.add("hidden");
 
   document
-    .getElementById("challengeRankSelf")
+    .getElementById(
+      "openRankingButton"
+    )
+    .classList.add(
+      "hidden"
+    );
+
+
+  document
+    .getElementById(
+      "challengeRankSelf"
+    )
     .textContent =
       "";
+
 
   try {
 
     const ref =
       getChallengeRef();
 
+
     const snapshot =
-      await getDoc(ref);
+      await getDoc(
+        ref
+      );
+
 
     if (
       snapshot.exists() &&
@@ -3555,6 +5880,7 @@ async function finishChallenge() {
       await updateDoc(
         ref,
         {
+
           status:
             "finished",
 
@@ -3567,45 +5893,87 @@ async function finishChallenge() {
           answered:
             challengeAnswered,
 
+          modeStats:
+            challengeModeStats,
+
+          setsStarted:
+            challengeSetsStarted,
+
+          maxSpellStreak:
+            maxSpellStreak,
+
+          maxPhraseSetCorrect:
+            maxPhraseSetCorrect,
+
+          missionAchieved:
+            missionAchieved,
+
           finishedAt:
             serverTimestamp()
         }
       );
     }
 
+
     document
-      .getElementById("challengeSaveStatus")
+      .getElementById(
+        "challengeSaveStatus"
+      )
       .textContent =
         "✅ 結果を保存しました。";
 
+
     document
-      .getElementById("openRankingButton")
-      .classList.remove("hidden");
+      .getElementById(
+        "openRankingButton"
+      )
+      .classList.remove(
+        "hidden"
+      );
+
 
     const rank =
       await getMyRank();
 
-    if (rank) {
+
+    if (
+      rank
+    ) {
 
       document
-        .getElementById("challengeRankSelf")
+        .getElementById(
+          "challengeRankSelf"
+        )
         .textContent =
-          `今日の順位：${rank}位`;
+          `${challengeClassCode}組 今日の順位：${rank}位`;
     }
 
-  } catch (error) {
+  } catch (
+    error
+  ) {
 
-    console.error(error);
+    console.error(
+      error
+    );
+
 
     document
-      .getElementById("challengeSaveStatus")
+      .getElementById(
+        "challengeSaveStatus"
+      )
       .textContent =
         "⚠ 結果を保存できませんでした。";
   }
 
-  finishing = false;
+
+  finishing =
+    false;
 }
 
+
+/* =========================================================
+   既に終了したチャレンジ
+========================================================= */
 
 function loadFinishedChallenge(
   data
@@ -3613,8 +5981,19 @@ function loadFinishedChallenge(
 
   challengeDurationMinutes =
     Number(
-      data.durationMinutes || 2
+      data.durationMinutes ||
+      2
     );
+
+
+  challengeClassCode =
+    data.classCode ||
+    getClassCode(
+      data.nickname ||
+      getNickname()
+    ) ||
+    "A";
+
 
   challengeSections =
     Array.isArray(
@@ -3622,23 +6001,57 @@ function loadFinishedChallenge(
     )
       ? data.selectedSections
           .map(Number)
-          .sort((a, b) => a - b)
+          .sort(
+            (a,b) =>
+              a-b
+          )
       : challengeSections;
+
 
   challengePoints =
     Number(
-      data.points || 0
+      data.points ||
+      0
     );
+
 
   challengeCorrect =
     Number(
-      data.correct || 0
+      data.correct ||
+      0
     );
+
 
   challengeAnswered =
     Number(
-      data.answered || 0
+      data.answered ||
+      0
     );
+
+
+  challengeModeStats =
+    data.modeStats ||
+    challengeModeStats;
+
+
+  challengeSetsStarted =
+    data.setsStarted ||
+    challengeSetsStarted;
+
+
+  maxSpellStreak =
+    Number(
+      data.maxSpellStreak ||
+      0
+    );
+
+
+  maxPhraseSetCorrect =
+    Number(
+      data.maxPhraseSetCorrect ||
+      0
+    );
+
 
   const rate =
     challengeAnswered
@@ -3649,104 +6062,203 @@ function loadFinishedChallenge(
         )
       : 0;
 
+
+  const mission =
+    getMissionById(
+      data.missionId
+    );
+
+
+  const achieved =
+    Boolean(
+      data.missionAchieved
+    );
+
+
   document
-    .getElementById("challengeResultDuration")
+    .getElementById(
+      "challengeResultDuration"
+    )
     .textContent =
       `${challengeDurationMinutes}分チャレンジ`;
 
+
   document
-    .getElementById("challengeResultSections")
+    .getElementById(
+      "challengeResultClass"
+    )
+    .textContent =
+      `${challengeClassCode}組`;
+
+
+  document
+    .getElementById(
+      "challengeResultSections"
+    )
     .textContent =
       "出題範囲：" +
       formatSections();
 
+
   document
-    .getElementById("challengeFinalPoints")
+    .getElementById(
+      "challengeFinalPoints"
+    )
     .textContent =
       `${challengePoints} pt`;
 
+
   document
-    .getElementById("challengeFinalCorrect")
+    .getElementById(
+      "challengeFinalCorrect"
+    )
     .textContent =
       challengeCorrect;
 
+
   document
-    .getElementById("challengeFinalAnswered")
+    .getElementById(
+      "challengeFinalAnswered"
+    )
     .textContent =
       challengeAnswered;
 
-  document
-    .getElementById("challengeFinalRate")
-    .textContent =
-      rate + "%";
 
   document
-    .getElementById("challengeSaveStatus")
+    .getElementById(
+      "challengeFinalRate"
+    )
+    .textContent =
+      rate +
+      "%";
+
+
+  const result =
+    document.getElementById(
+      "challengeMissionResult"
+    );
+
+
+  if (
+    achieved
+  ) {
+
+    result.className =
+      "mission-success";
+
+    result.innerHTML =
+      `🎯 <strong>MISSION CLEAR!</strong><br>` +
+      `${escapeHtml(mission.text)}<br>` +
+      `<span class="small">ミッション賞の候補です。</span>`;
+
+  } else {
+
+    result.className =
+      "mission-fail";
+
+    result.innerHTML =
+      `🎯 今日のミッション<br>` +
+      `<strong>${escapeHtml(mission.text)}</strong><br>` +
+      `今回は未達成でした。`;
+  }
+
+
+  document
+    .getElementById(
+      "challengeSaveStatus"
+    )
     .textContent =
       "この条件のチャレンジには今日はすでに参加しています。";
 
+
   document
-    .getElementById("openRankingButton")
-    .classList.remove("hidden");
+    .getElementById(
+      "openRankingButton"
+    )
+    .classList.remove(
+      "hidden"
+    );
+
 
   showScreen(
     "challengeResult"
   );
 
+
   getMyRank()
-    .then(rank => {
+    .then(
+      rank => {
 
-      if (rank) {
+        if (
+          rank
+        ) {
 
-        document
-          .getElementById("challengeRankSelf")
-          .textContent =
-            `今日の順位：${rank}位`;
+          document
+            .getElementById(
+              "challengeRankSelf"
+            )
+            .textContent =
+              `${challengeClassCode}組 今日の順位：${rank}位`;
+        }
       }
-    })
+    )
     .catch(
       console.error
     );
 }
 
 
-/* =========================
-ランキング
-========================= */
+/* =========================================================
+   ランキング
+========================================================= */
 
-function sortRanking(items) {
+function sortRanking(
+  items
+) {
 
   return [...items]
     .sort(
-      (a, b) => {
+      (a,b) => {
 
         const pointDiff =
           Number(
-            b.points || 0
+            b.points ||
+            0
           ) -
           Number(
-            a.points || 0
+            a.points ||
+            0
           );
 
+
         if (
-          pointDiff !== 0
+          pointDiff !==
+          0
         ) {
+
           return pointDiff;
         }
 
+
         const correctDiff =
           Number(
-            b.correct || 0
+            b.correct ||
+            0
           ) -
           Number(
-            a.correct || 0
+            a.correct ||
+            0
           );
 
+
         if (
-          correctDiff !== 0
+          correctDiff !==
+          0
         ) {
+
           return correctDiff;
         }
+
 
         const aTime =
           a.finishedAt &&
@@ -3755,6 +6267,7 @@ function sortRanking(items) {
             ? a.finishedAt.toMillis()
             : Number.MAX_SAFE_INTEGER;
 
+
         const bTime =
           b.finishedAt &&
           typeof b.finishedAt.toMillis ===
@@ -3762,7 +6275,11 @@ function sortRanking(items) {
             ? b.finishedAt.toMillis()
             : Number.MAX_SAFE_INTEGER;
 
-        return aTime - bTime;
+
+        return (
+          aTime -
+          bTime
+        );
       }
     );
 }
@@ -3774,14 +6291,20 @@ async function getFinishedParticipants() {
     collection(
       db,
       "challengeDays",
-      getChallengeDayId(),
+      getChallengeGroupId(),
       "participants"
     );
 
-  const snapshot =
-    await getDocs(ref);
 
-  const items = [];
+  const snapshot =
+    await getDocs(
+      ref
+    );
+
+
+  const items =
+    [];
+
 
   snapshot.forEach(
     documentSnapshot => {
@@ -3789,19 +6312,23 @@ async function getFinishedParticipants() {
       const data =
         documentSnapshot.data();
 
+
       if (
         data.status ===
         "finished"
       ) {
 
-        items.push({
-          id:
-            documentSnapshot.id,
-          ...data
-        });
+        items.push(
+          {
+            id:
+              documentSnapshot.id,
+            ...data
+          }
+        );
       }
     }
   );
+
 
   return sortRanking(
     items
@@ -3811,14 +6338,19 @@ async function getFinishedParticipants() {
 
 async function getMyRank() {
 
-  if (!currentUser) {
+  if (
+    !currentUser
+  ) {
+
     return null;
   }
+
 
   try {
 
     const items =
       await getFinishedParticipants();
+
 
     const index =
       items.findIndex(
@@ -3827,27 +6359,107 @@ async function getMyRank() {
           currentUser.uid
       );
 
-    return index >= 0
-      ? index + 1
-      : null;
 
-  } catch (error) {
+    return index >=
+      0
+        ? index + 1
+        : null;
 
-    console.error(error);
+  } catch (
+    error
+  ) {
+
+    console.error(
+      error
+    );
 
     return null;
   }
 }
 
 
+/*
+ミッション賞：
+1位を除くミッション達成者の中から
+グループID＋UIDで決定的に1人を選ぶ。
+*/
+
+function selectMissionWinner(
+  ranking
+) {
+
+  if (
+    ranking.length ===
+    0
+  ) {
+
+    return null;
+  }
+
+
+  const topId =
+    ranking[0].id;
+
+
+  const candidates =
+    ranking.filter(
+      item =>
+        item.id !==
+        topId &&
+        item.missionAchieved ===
+        true
+    );
+
+
+  if (
+    !candidates.length
+  ) {
+
+    return null;
+  }
+
+
+  return [...candidates]
+    .sort(
+      (a,b) => {
+
+        const aHash =
+          hashString(
+            getChallengeGroupId() +
+            "|missionWinner|" +
+            a.id
+          );
+
+
+        const bHash =
+          hashString(
+            getChallengeGroupId() +
+            "|missionWinner|" +
+            b.id
+          );
+
+
+        return (
+          aHash -
+          bHash
+        );
+      }
+    )[0];
+}
+
+
 document
-  .getElementById("openRankingButton")
+  .getElementById(
+    "openRankingButton"
+  )
   .onclick =
     loadRanking;
 
 
 document
-  .getElementById("refreshRankingButton")
+  .getElementById(
+    "refreshRankingButton"
+  )
   .onclick =
     loadRanking;
 
@@ -3858,22 +6470,52 @@ async function loadRanking() {
     "rankingSection"
   );
 
-  document
-    .getElementById("rankingTitle")
-    .textContent =
-      `🏆 今日の${challengeDurationMinutes}分ランキング`;
 
   document
-    .getElementById("rankingRange")
+    .getElementById(
+      "rankingTitle"
+    )
+    .textContent =
+      `🏆 ${challengeClassCode}組 今日の${challengeDurationMinutes}分ランキング`;
+
+
+  document
+    .getElementById(
+      "rankingRange"
+    )
     .textContent =
       "出題範囲：" +
       formatSections();
 
+
+  document
+    .getElementById(
+      "rankingMission"
+    )
+    .innerHTML =
+      `<div class="mission-title">🎯 TODAY'S MISSION</div>` +
+      `<div class="mission-text">${escapeHtml(getMission().text)}</div>`;
+
+
   const content =
-    document.getElementById("rankingContent");
+    document.getElementById(
+      "rankingContent"
+    );
+
+
+  const awards =
+    document.getElementById(
+      "awardSummary"
+    );
+
 
   content.textContent =
     "読み込み中…";
+
+
+  awards.innerHTML =
+    "";
+
 
   try {
 
@@ -3881,6 +6523,7 @@ async function loadRanking() {
       await getDoc(
         getChallengeRef()
       );
+
 
     if (
       !own.exists() ||
@@ -3894,10 +6537,14 @@ async function loadRanking() {
       return;
     }
 
+
     const ranking =
       await getFinishedParticipants();
 
-    if (!ranking.length) {
+
+    if (
+      !ranking.length
+    ) {
 
       content.textContent =
         "まだ記録がありません。";
@@ -3905,13 +6552,51 @@ async function loadRanking() {
       return;
     }
 
+
+    const topWinner =
+      ranking[0];
+
+
+    const missionWinner =
+      selectMissionWinner(
+        ranking
+      );
+
+
+    awards.innerHTML =
+      `
+      <div class="award-box">
+        <h3>🎁 シール対象</h3>
+
+        <div>
+          🏆 <strong>トップ賞：</strong>
+          ${escapeHtml(topWinner.nickname || "匿名")}
+        </div>
+
+        <div style="margin-top:8px;">
+          🎯 <strong>ミッション賞：</strong>
+          ${
+            missionWinner
+              ? escapeHtml(
+                  missionWinner.nickname ||
+                  "匿名"
+                )
+              : "該当者なし"
+          }
+        </div>
+      </div>
+      `;
+
+
     const table =
       document.createElement(
         "table"
       );
 
+
     table.className =
       "ranking";
+
 
     table.innerHTML =
       `
@@ -3919,38 +6604,62 @@ async function loadRanking() {
         <tr>
           <th>順位</th>
           <th>表示名</th>
-          <th>ポイント</th>
+          <th>pt</th>
           <th>正解</th>
+          <th>Mission</th>
         </tr>
       </thead>
       `;
+
 
     const tbody =
       document.createElement(
         "tbody"
       );
 
+
     ranking
-      .slice(0, 30)
+      .slice(
+        0,
+        30
+      )
       .forEach(
-        (item, index) => {
+        (
+          item,
+          index
+        ) => {
 
           const tr =
             document.createElement(
               "tr"
             );
 
-          if (index === 0) {
-            tr.className = "rank1";
+
+          if (
+            index ===
+            0
+          ) {
+
+            tr.className =
+              "rank1";
+
+          } else if (
+            index ===
+            1
+          ) {
+
+            tr.className =
+              "rank2";
+
+          } else if (
+            index ===
+            2
+          ) {
+
+            tr.className =
+              "rank3";
           }
 
-          if (index === 1) {
-            tr.className = "rank2";
-          }
-
-          if (index === 2) {
-            tr.className = "rank3";
-          }
 
           const medal =
             index === 0
@@ -3961,37 +6670,70 @@ async function loadRanking() {
                   ? "🥉"
                   : `${index + 1}位`;
 
-          const sticker =
-            index < 2
-              ? '<span class="sticker">シール</span>'
-              : "";
+
+          const isTop =
+            item.id ===
+            topWinner.id;
+
+
+          const isMissionWinner =
+            missionWinner &&
+            item.id ===
+            missionWinner.id;
+
+
+          let awardLabel =
+            "";
+
+
+          if (
+            isTop
+          ) {
+
+            awardLabel +=
+              `<br><span class="sticker">トップ賞</span>`;
+          }
+
+
+          if (
+            isMissionWinner
+          ) {
+
+            awardLabel +=
+              `<br><span class="sticker mission-sticker">ミッション賞</span>`;
+          }
+
+
+          const missionMark =
+            item.missionAchieved
+              ? "🎯"
+              : "—";
+
 
           tr.innerHTML =
             `
             <td>${medal}</td>
 
             <td>
-              ${escapeHtml(
-                item.nickname ||
-                "匿名"
-              )}
-              ${sticker}
+              ${escapeHtml(item.nickname || "匿名")}
+              ${awardLabel}
             </td>
 
             <td>
               <strong>
-                ${Number(
-                  item.points || 0
-                )} pt
+                ${Number(item.points || 0)}
               </strong>
             </td>
 
             <td>
-              ${Number(
-                item.correct || 0
-              )}問
+              ${Number(item.correct || 0)}
+            </td>
+
+            <td class="achievement">
+              ${missionMark}
             </td>
             `;
+
 
           tbody.appendChild(
             tr
@@ -3999,20 +6741,28 @@ async function loadRanking() {
         }
       );
 
+
     table.appendChild(
       tbody
     );
 
+
     content.innerHTML =
       "";
+
 
     content.appendChild(
       table
     );
 
-  } catch (error) {
+  } catch (
+    error
+  ) {
 
-    console.error(error);
+    console.error(
+      error
+    );
+
 
     content.innerHTML =
       '<div class="error-box">ランキングを読み込めませんでした。</div>';
@@ -4020,21 +6770,29 @@ async function loadRanking() {
 }
 
 
-/* =========================
-保存設定
-========================= */
+/* =========================================================
+   保存済み設定
+========================================================= */
 
 const savedNickname =
   localStorage.getItem(
     "lesson3Nickname"
   );
 
-if (savedNickname) {
+
+if (
+  savedNickname
+) {
 
   document
-    .getElementById("globalNickname")
+    .getElementById(
+      "globalNickname"
+    )
     .value =
       savedNickname;
+
+
+  updateClassPreview();
 }
 
 
@@ -4043,11 +6801,12 @@ const savedDuration =
     "lesson3ChallengeDuration"
   );
 
+
 if (
-  ["2", "3", "5"]
-    .includes(
-      savedDuration
-    )
+  ["2","3","5"]
+  .includes(
+    savedDuration
+  )
 ) {
 
   const radio =
@@ -4056,8 +6815,13 @@ if (
       savedDuration
     );
 
-  if (radio) {
-    radio.checked = true;
+
+  if (
+    radio
+  ) {
+
+    radio.checked =
+      true;
   }
 }
 
@@ -4071,6 +6835,7 @@ try {
       ) ||
       "[]"
     );
+
 
   if (
     Array.isArray(
@@ -4096,10 +6861,11 @@ try {
       );
   }
 
-} catch (error) {
+} catch (
+  error
+) {
 
   console.error(
-    "Section設定の読み込みエラー",
     error
   );
 }
